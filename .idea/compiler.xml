@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+      </profile>
+      <profile name="Annotation profile for ReportMicroservice" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.4.2.Final/mapstruct-processor-1.4.2.Final.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.4.2.Final/mapstruct-1.4.2.Final.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.24/lombok-1.18.24.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok-mapstruct-binding/0.2.0/lombok-mapstruct-binding-0.2.0.jar" />
+        </processorPath>
+        <module name="alrajhi-common-lib" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="app-module" target="17" />
+      <module name="iqvia-author-microservice" target="17" />
+      <module name="iqvia-author-microservice (1)" target="17" />
+      <module name="iqvia-author-microservice (2)" target="17" />
+      <module name="iqvia-bom" target="1.5" />
+      <module name="iqvia-book-microservice" target="17" />
+      <module name="iqvia-common" target="17" />
+      <module name="iqvia-common-lib" target="17" />
+      <module name="iqvia-parent" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="alrajhi-common" options="-parameters" />
+      <module name="alrajhi-common-lib" options="-parameters" />
+      <module name="alrajhi-parent" options="-parameters" />
+      <module name="alrajhi-report-service" options="-parameters" />
+      <module name="app-module" options="-parameters" />
+      <module name="iqvia-author-microservice" options="-parameters" />
+      <module name="iqvia-author-microservice (1)" options="-parameters" />
+      <module name="iqvia-author-microservice (2)" options="-parameters" />
+      <module name="iqvia-book-microservice" options="-parameters" />
+      <module name="iqvia-common" options="-parameters" />
+      <module name="iqvia-common-lib" options="-parameters" />
+      <module name="iqvia-parent" options="-parameters" />
+    </option>
+  </component>
+</project>

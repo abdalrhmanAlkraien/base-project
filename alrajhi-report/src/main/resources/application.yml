@@ -1,0 +1,20 @@
+app:
+  version: @project.version@
+  api:
+    version: 'v1'
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: IQVIA author service
+
+server:
+  servlet:
+    context-path: /api/v1
+  port: 8085
+
+logging:
+  level:
+    root: INFO
+    org.springframework: WARN  # Less detailed logging for Spring

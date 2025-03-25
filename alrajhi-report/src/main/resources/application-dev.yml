@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:h2:file:/data/author_service # access the db by http://localhost:8085/api/v1/h2-console
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
