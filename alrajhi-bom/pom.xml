@@ -14,6 +14,7 @@
 
     <properties>
         <revision>0.0.1-SNAPSHOT</revision>
+        <jasper-version>6.21.0</jasper-version>
     </properties>
 
 
@@ -42,6 +43,36 @@
                <groupId>com.alrajhi</groupId>
                <artifactId>alrajhi-common-lib</artifactId>
                <version>${revision}</version>
+           </dependency>
+
+           <dependency>
+               <groupId>net.sf.jasperreports</groupId>
+               <artifactId>jasperreports</artifactId>
+               <version>${jasper-version}</version>
+           </dependency>
+
+
+
+           <!-- JasperReports Java XML support -->
+           <dependency>
+               <groupId>net.sf.jasperreports</groupId>
+               <artifactId>jasperreports-functions</artifactId>
+               <version>${jasper-version}</version>
+
+           </dependency>
+
+           <!-- Font extension (optional, useful for PDF reports) -->
+           <dependency>
+               <groupId>net.sf.jasperreports</groupId>
+               <artifactId>jasperreports-fonts</artifactId>
+               <version>${jasper-version}</version>
+           </dependency>
+
+           <!-- JavaBeans DataSource -->
+           <dependency>
+               <groupId>net.sf.jasperreports</groupId>
+               <artifactId>jasperreports-javaflow</artifactId>
+               <version>${jasper-version}</version>
            </dependency>
 
        </dependencies>
