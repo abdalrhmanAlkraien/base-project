@@ -17,7 +17,7 @@
 
     <properties>
         <revision>0.0.1-SNAPSHOT</revision>
-        <iqvia-common.version>0.0.1-SNAPSHOT</iqvia-common.version>
+        <alrajhi-common.version>0.0.1-SNAPSHOT</alrajhi-common.version>
         <java-version>17</java-version>
         <lombok.version>1.18.24</lombok.version>
         <mapstruct.version>1.4.2.Final</mapstruct.version>

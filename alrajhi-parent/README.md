@@ -59,4 +59,3 @@ In the parent project, we will put shared dependencies that will use inside micr
 
 - **we will put common dependencies here.**
 - **the dependency version put as a variable in the right place.**
-- **don't put any other thing before ask Abdulrahman or Omar.**

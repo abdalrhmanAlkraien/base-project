@@ -1,6 +1,6 @@
 # Market place Bill of Materials - BOM #
 
-Marketplace-BOM is the Bill of Materials maven project which aims to manage the dependacies across all the marketplace microservices and sub projects.
+Alrahi-bank-BOM is the Bill of Materials maven project which aims to manage the dependencies across all the Alrajhi microservices and subprojects.
 
 ## What is this repository for? ###
 
