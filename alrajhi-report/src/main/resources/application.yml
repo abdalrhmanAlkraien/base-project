@@ -7,7 +7,7 @@ spring:
   profiles:
     active: dev
   application:
-    name: IQVIA author service
+    name: AlRjhi report service
 
 server:
   servlet:

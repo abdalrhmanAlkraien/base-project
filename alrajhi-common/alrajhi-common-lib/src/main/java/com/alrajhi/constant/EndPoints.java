@@ -8,6 +8,8 @@ package com.alrajhi.constant;
 public class EndPoints {
 
 
+    public static final String REPORT = "/report";
+
     public static final String ID_KEY = "/{id}";
 
 }

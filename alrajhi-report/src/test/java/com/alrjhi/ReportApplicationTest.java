@@ -1,4 +1,4 @@
-package com.iqvia;
+package com.alrjhi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
  * @Time: 10:33 PM
  */
 @SpringBootTest
-public class AuthorApplicationTest {
+public class ReportApplicationTest {
 
     @Test
     void contextLoads() {

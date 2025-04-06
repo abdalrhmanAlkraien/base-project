@@ -2,6 +2,7 @@ package com.alrajhi.error.exception;
 
 import com.alrajhi.error.error.BusinessErrorCodes;
 import com.alrajhi.error.error.ErrorCategories;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 

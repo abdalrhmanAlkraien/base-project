@@ -1,8 +1,6 @@
-package com.iqvia.dto.request;
+package com.alrjhi.dto.request;
 
-import com.iqvia.model.enumeration.Gender;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,7 +17,4 @@ public class AuthorRequest {
 
     @NotBlank
     private String name;
-
-    @NotNull
-    private Gender gender;
 }

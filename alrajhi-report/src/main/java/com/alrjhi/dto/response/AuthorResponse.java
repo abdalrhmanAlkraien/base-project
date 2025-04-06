@@ -1,6 +1,5 @@
-package com.iqvia.dto.response;
+package com.alrjhi.dto.response;
 
-import com.iqvia.model.enumeration.Gender;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,6 +16,5 @@ public class AuthorResponse {
 
     private Long id;
     private String name;
-    private Gender gender;
     private Integer numberOfBook;
 }
