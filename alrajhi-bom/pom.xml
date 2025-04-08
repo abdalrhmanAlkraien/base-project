@@ -77,12 +77,14 @@
                <version>${jasper-version}</version>
            </dependency>
 
+           <!-- To enable swagger -->
            <dependency>
                <groupId>org.springdoc</groupId>
                <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
                <version>${webmvc-ui-version}</version>
            </dependency>
 
+           <!-- To enable swagger -->
            <dependency>
                <groupId>org.springdoc</groupId>
                <artifactId>springdoc-openapi-starter-webflux-ui</artifactId>

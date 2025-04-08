@@ -1,0 +1,23 @@
+version: '3'
+services:
+  nexus:
+    image: sonatype/nexus3
+    container_name: nexus
+    ports:
+      - "8081:8081"
+    restart: unless-stopped
+#    volumes:
+#      - nexus-data:/nexus-data
+    networks:
+      - nexus-network
+    environment:
+      - NEXUS_SECURITY_RANDOMPASSWORD=false # Disable random password generation for initial admin
+      - NEXUS_ADMIN_PASSWORD=admin123      # Set a custom admin password
+
+volumes:
+  nexus-data:
+    driver: local
+
+networks:
+  nexus-network:
+    driver: bridge
