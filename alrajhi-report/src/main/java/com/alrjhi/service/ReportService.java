@@ -1,5 +1,6 @@
 package com.alrjhi.service;
 
+import com.alrjhi.dto.request.ReportRequest;
 import net.sf.jasperreports.engine.JRException;
 import org.springframework.core.io.ByteArrayResource;
 
@@ -9,5 +10,5 @@ import org.springframework.core.io.ByteArrayResource;
  * @Time: 10:47 PM
  */
 public interface ReportService {
-    byte[] generateReport() throws JRException;
+    byte[] generateReport(final ReportRequest report) throws JRException;
 }

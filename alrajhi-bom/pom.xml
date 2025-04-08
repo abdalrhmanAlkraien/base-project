@@ -87,6 +87,20 @@
                <version>2.8.5</version>
            </dependency>
 
+
+           <!-- https://mvnrepository.com/artifact/io.micrometer/micrometer-registry-prometheus -->
+           <dependency>
+               <groupId>io.micrometer</groupId>
+               <artifactId>micrometer-registry-prometheus</artifactId>
+               <version>1.14.5</version>
+           </dependency>
+
+           <dependency>
+               <groupId>net.sf.jasperreports</groupId>
+               <artifactId>jasperreports-fonts</artifactId>
+               <version>${jasper-version}</version>
+           </dependency>
+
        </dependencies>
     </dependencyManagement>
     <build></build>

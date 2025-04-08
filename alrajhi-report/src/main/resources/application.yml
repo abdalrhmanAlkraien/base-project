@@ -3,6 +3,31 @@ app:
   api:
     version: 'v1'
 
+info:
+  application:
+    name: '@project.name@'
+    description: '@project.description@'
+    version: '@project.version@'
+
+management:
+  info:
+    env:
+      enabled: true
+  endpoints:
+    prometheus:
+      enable: true
+    web:
+      base-path: /actuator
+      exposure:
+        include: '*'
+
+  metrics:
+    enable:
+      all: true
+  prometheus:
+    metrics:
+      export:
+        enabled: true
 spring:
   profiles:
     active: dev

@@ -1,0 +1,20 @@
+version: '2'
+services:
+  garage-mysql:
+    image: mysql:8.0.20
+    #    volumes:
+    #      - ./data/mysql:/var/lib/mysql/
+    environment:
+      - MYSQL_DATABASE=garageDb
+      - MYSQL_USER= adminUser
+      # - MYSQL_ALLOW_EMPTY_PASSWORD = true
+      - MYSQL_PASSWORD=AdminPassword
+      - MYSQL_ROOT_PASSWORD=AdminPassword
+    ports:
+      - 3306:3306
+    command: mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8mb4 --explicit_defaults_for_timestamp
+    networks:
+      - database_network
+networks:
+  database_network:
+    external: true

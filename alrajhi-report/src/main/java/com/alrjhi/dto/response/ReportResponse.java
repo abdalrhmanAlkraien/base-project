@@ -6,13 +6,13 @@ import lombok.Data;
 
 /**
  * @author: Abd-alrhman Alkraien.
- * @Date: 11/3/2024
- * @Time: 10:49 PM
+ * @Date: 7/4/2025
+ * @Time: 10:49 AM
  */
 @Data
 @AllArgsConstructor
 @Builder
-public class AuthorResponse {
+public class ReportResponse {
 
     private Long id;
     private String name;
