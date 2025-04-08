@@ -2,20 +2,25 @@ package com.alrjhi.service.impl;
 
 import com.alrjhi.ReportApplication;
 import com.alrjhi.dto.request.ReportRequest;
+import com.alrjhi.model.ReportEntity;
+import com.alrjhi.repository.ReportRepository;
 import com.alrjhi.service.ReportService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import net.sf.jasperreports.engine.*;
 import org.springframework.stereotype.Service;
 
 import java.io.InputStream;
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 @Service
 @Log4j2
+@RequiredArgsConstructor
 public class JasperReportService implements ReportService {
+
+    private final ReportRepository reportRepository;
 
     /**
      * To generate report
@@ -55,7 +60,9 @@ public class JasperReportService implements ReportService {
                 new JREmptyDataSource() // Empty data source
         );
 
-        return JasperExportManager.exportReportToPdf(jasperPrint);
 
+        reportRepository.save(ReportEntity.builder().customerName(reportRequest.getCustomerName()).build());
+
+        return JasperExportManager.exportReportToPdf(jasperPrint);
     }
 }

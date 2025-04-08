@@ -1,13 +1,31 @@
 spring:
   datasource:
-    url: jdbc:h2:file:/data/report_service # access the db by http://localhost:8085/api/v1/h2-console
-    driver-class-name: org.h2.Driver
-    username: sa
-    password: password
+    url: ${data.url:jdbc:mysql://127.0.0.1:3306/report-service?autoReconnect=true&useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true}
+    username: ${data.username:adminUser}
+    password: ${data.password:AdminPassword}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      initialization-fail-timeout: 60000
+      connection-test-query: SELECT 1
+      maximum-pool-size: 10
+      connection-timeout: 30000
   jpa:
+    open-in-view: false
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    properties:
+        generate_statistics: true
+        order_inserts: true
+        order_updates: true
+        jdbc:
+          size: 100
     hibernate:
       ddl-auto: update
-    database-platform: org.hibernate.dialect.H2Dialect
-  h2:
-    console:
-      enabled: true
+
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        tool:
+          hbm2ddl: TRACE

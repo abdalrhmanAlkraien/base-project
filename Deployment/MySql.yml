@@ -5,9 +5,8 @@ services:
     #    volumes:
     #      - ./data/mysql:/var/lib/mysql/
     environment:
-      - MYSQL_DATABASE=garageDb
+      - MYSQL_DATABASE=report-service
       - MYSQL_USER= adminUser
-      # - MYSQL_ALLOW_EMPTY_PASSWORD = true
       - MYSQL_PASSWORD=AdminPassword
       - MYSQL_ROOT_PASSWORD=AdminPassword
     ports:
