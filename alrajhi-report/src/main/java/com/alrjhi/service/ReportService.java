@@ -1,8 +1,9 @@
 package com.alrjhi.service;
 
 import com.alrjhi.dto.request.ReportRequest;
+import com.alrjhi.dto.response.ReportResponse;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import net.sf.jasperreports.engine.JRException;
-import org.springframework.core.io.ByteArrayResource;
 
 /**
  * @author: Abd-alrhman Alkraien.
@@ -10,5 +11,5 @@ import org.springframework.core.io.ByteArrayResource;
  * @Time: 10:47 PM
  */
 public interface ReportService {
-    byte[] generateReport(final ReportRequest report) throws JRException;
+    ReportResponse generateReport(final ReportRequest report) throws JRException, JsonProcessingException;
 }

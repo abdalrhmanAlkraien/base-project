@@ -3,7 +3,9 @@ package com.alrjhi.controller;
 import com.alrajhi.constant.EndPoints;
 import com.alrajhi.util.GenericResponse;
 import com.alrjhi.dto.request.ReportRequest;
+import com.alrjhi.dto.response.ReportResponse;
 import com.alrjhi.service.ReportService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -13,16 +15,11 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import net.sf.jasperreports.engine.JRException;
-import org.springframework.core.io.ByteArrayResource;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.net.URISyntaxException;
 
 /**
  * @author: Abd-alrhman Alkraien.
@@ -56,16 +53,12 @@ public class ReportController {
             }, description = "Not Found")
     })
     @GetMapping
-    public ResponseEntity<ByteArrayResource> generateReport(
+    public ResponseEntity<GenericResponse<ReportResponse>> generateReport(
             @RequestBody @Valid ReportRequest report
-    ) throws JRException {
+    ) throws JRException, JsonProcessingException {
 
-        HttpHeaders headers = new HttpHeaders();
-        headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=simple_report.pdf");
-
-        return ResponseEntity.ok()
-                .headers(headers)
-                .contentType(MediaType.APPLICATION_PDF)
-                .body(new ByteArrayResource(reportService.generateReport(report)));
+        return ResponseEntity
+                .ok()
+                .body(GenericResponse.success(reportService.generateReport(report)));
     }
 }

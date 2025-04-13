@@ -13,8 +13,11 @@ import lombok.Getter;
 public enum BusinessErrorCodes {
 
     NO_RECORD_FOUND("GEN-001", "No record found."),
-    CANT_CALL_INTERNAL_API("GEN-002", "Connection Issue");
+    CANT_CALL_INTERNAL_API("GEN-002", "Connection Issue"),
+    WRONG_LETTER_TYPE("REP-001", "The report letter type is wrong"),
+    REPORT_IS_NULL("REP-002", "Report is null"),
+    ;
 
-    private String code;
-    private String errorMessage;
+    private final String code;
+    private final String errorMessage;
 }

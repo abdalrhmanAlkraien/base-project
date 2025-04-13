@@ -3,8 +3,15 @@ package com.alrjhi.model;
 import com.alrajhi.model.AbstractEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Table;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 
 /**
  * @author: Abd-alrhman Alkraien.
@@ -20,7 +27,15 @@ import lombok.*;
 @Builder
 public class ReportEntity extends AbstractEntity {
 
-    @Column(name = "customer_name", nullable = false)
-    private String customerName;
+    @Column(name = "data", columnDefinition = "JSON")
+    private String data;
 
+    @Enumerated(EnumType.STRING)
+    private Source source;
+
+    @Enumerated(EnumType.STRING)
+    private LetterType letterType;
+
+    @Enumerated(EnumType.STRING)
+    private Language reportLanguage;
 }

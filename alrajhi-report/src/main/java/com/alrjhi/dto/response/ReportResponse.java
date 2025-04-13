@@ -1,5 +1,8 @@
 package com.alrjhi.dto.response;
 
+import com.alrjhi.model.Language;
+import com.alrjhi.model.LetterType;
+import com.alrjhi.model.Source;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,6 +18,8 @@ import lombok.Data;
 public class ReportResponse {
 
     private Long id;
-    private String name;
-    private Integer numberOfBook;
+    private String file;
+    private Source source;
+    private LetterType letterType;
+    private Language reportLanguage;
 }

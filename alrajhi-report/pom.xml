@@ -16,6 +16,20 @@
 	<name>ReportMicroservice</name>
 	<description>Report Microservice</description>
 
+	<repositories>
+		<!-- Add Nexus repository to fetch dependencies -->
+		<repository>
+			<id>nexus-repo</id>
+			<url>http://localhost:8081/repository/maven-public/</url> <!-- URL of your Nexus repository -->
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
 	<dependencies>
 		<dependency>
 			<groupId>com.alrajhi</groupId>
@@ -42,12 +56,6 @@
 			<groupId>net.sf.jasperreports</groupId>
 			<artifactId>jasperreports-functions</artifactId>
 
-		</dependency>
-
-		<!-- Font extension (optional, useful for PDF reports) -->
-		<dependency>
-			<groupId>net.sf.jasperreports</groupId>
-			<artifactId>jasperreports-fonts</artifactId>
 		</dependency>
 
 		<!-- JavaBeans DataSource -->
@@ -85,6 +93,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.librepdf</groupId>
+			<artifactId>openpdf</artifactId>
 		</dependency>
 	</dependencies>
 
