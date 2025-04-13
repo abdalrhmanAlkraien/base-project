@@ -29,3 +29,4 @@ logging:
         SQL: DEBUG
         tool:
           hbm2ddl: TRACE
+

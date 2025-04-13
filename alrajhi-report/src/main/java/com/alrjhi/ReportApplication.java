@@ -6,19 +6,17 @@ import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperReport;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
+import org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration;
 
 import java.io.File;
 import java.io.InputStream;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = {SecurityAutoConfiguration.class, UserDetailsServiceAutoConfiguration.class})
 @Log4j2
 public class ReportApplication {
 
     public static void main(String[] args) throws JRException {
-
-		String sourceFile = "/src/main/resources/reports/report.jrxml";
-
-// Load the .jrxml file from the resources folder
 
 		SpringApplication.run(ReportApplication.class, args);
     }
