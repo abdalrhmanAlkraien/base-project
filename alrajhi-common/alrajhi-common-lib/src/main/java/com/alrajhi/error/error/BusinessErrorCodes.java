@@ -16,6 +16,8 @@ public enum BusinessErrorCodes {
     CANT_CALL_INTERNAL_API("GEN-002", "Connection Issue"),
     WRONG_LETTER_TYPE("REP-001", "The report letter type is wrong"),
     REPORT_IS_NULL("REP-002", "Report is null"),
+    REPORT_NOT_FOUND("REP-003", "Report not found"),
+    PARAMS_MISMATCH("REP-004", "Parameters mismatch"),
     ;
 
     private final String code;

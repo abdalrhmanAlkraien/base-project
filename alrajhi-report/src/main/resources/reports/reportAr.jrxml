@@ -66,12 +66,18 @@
 		</box>
 	</style>
 	<subDataset name="Dataset2" uuid="4c4f6b6f-2c80-4cfd-8ad7-44ac45fcd6dc">
-		<parameter name="contractNo" class="java.lang.String"/>
-		<parameter name="productType" class="java.lang.String"/>
-		<parameter name="totalAmount" class="java.lang.String"/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="NO_DATA_ADAPTER"/>
+		<property name="com.jaspersoft.studio.data.sql.tables" value="dGFsYmUgLDE1LDE1LDJmODAzNzE3LWNhNzQtNDI2Mi1iYmYyLTY3MDYyY2I5OWQ5ZDs="/>
+		<parameter name="tableDataSource" class="net.sf.jasperreports.engine.JRDataSource">
+			<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+		</parameter>
 		<queryString>
-			<![CDATA[]]>
+			<![CDATA[SELECT *
+FROM talbe]]>
 		</queryString>
+		<field name="contractNo" class="java.lang.String"/>
+		<field name="productType" class="java.lang.String"/>
+		<field name="totalAmount" class="java.lang.String"/>
 	</subDataset>
 	<parameter name="currentDate" class="java.util.Date">
 		<parameterDescription><![CDATA[To set the current date]]></parameterDescription>
@@ -82,12 +88,13 @@
 	<parameter name="customerName" class="java.lang.String"/>
 	<parameter name="identityNo" class="java.lang.String"/>
 	<parameter name="iban" class="java.lang.String"/>
-	<parameter name="contractNo" class="java.lang.String"/>
-	<parameter name="productType" class="java.lang.String"/>
-	<parameter name="totalAmount" class="java.lang.String"/>
+	<parameter name="tableDataSource" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
+	<field name="contractNo" class="java.lang.String"/>
+	<field name="productType" class="java.lang.String"/>
+	<field name="totalAmount" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -224,25 +231,17 @@
 		<band height="300" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<componentElement>
-				<reportElement style="Table_TH" x="15" y="0" width="540" height="70" forecolor="rgba(255, 255, 255, 0.0)" backcolor="rgba(255, 255, 255, 0.0)" uuid="c9c5042e-2825-4ce2-abdf-db83f2e3f684">
+				<reportElement style="Table 2_TD" positionType="Float" stretchType="ElementGroupHeight" x="15" y="0" width="540" height="70" isPrintWhenDetailOverflows="true" forecolor="rgba(255, 255, 255, 0.0)" backcolor="rgba(255, 255, 255, 0.0)" uuid="c9c5042e-2825-4ce2-abdf-db83f2e3f684">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 					<property name="com.jaspersoft.studio.table.style.table_header" value="Table 2_TH"/>
 					<property name="com.jaspersoft.studio.table.style.column_header" value="Table 2_CH"/>
 					<property name="com.jaspersoft.studio.table.style.detail" value="Table 2_TD"/>
 					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.components.autoresize.next" value="true"/>
 				</reportElement>
-				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="Blank">
-					<datasetRun subDataset="Dataset2" uuid="8a1c48a3-4445-4a3e-9717-5b8012559324">
-						<datasetParameter name="contractNo">
-							<datasetParameterExpression><![CDATA[$P{contractNo}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="totalAmount">
-							<datasetParameterExpression><![CDATA[$P{totalAmount}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="productType">
-							<datasetParameterExpression><![CDATA[$P{productType}]]></datasetParameterExpression>
-						</datasetParameter>
-						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="AllSectionsNoDetail">
+					<datasetRun subDataset="Dataset2" uuid="f735fc12-4dc3-44ce-bb3a-ab1f5a948ea7">
+						<dataSourceExpression><![CDATA[$P{tableDataSource}]]></dataSourceExpression>
 					</datasetRun>
 					<jr:column width="180" uuid="0f1c4fab-c062-40bd-880f-89e36bf92757">
 						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
@@ -258,11 +257,11 @@
 						</jr:tableHeader>
 						<jr:detailCell style="Table 2_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="180" height="30" uuid="68a21515-92c4-4a7a-8f34-38fe6e6c029f"/>
+								<reportElement x="0" y="0" width="180" height="30" isPrintWhenDetailOverflows="true" uuid="68a21515-92c4-4a7a-8f34-38fe6e6c029f"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
 									<font fontName="Arial" pdfFontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 								</textElement>
-								<textFieldExpression><![CDATA[($P{totalAmount} != null && !$P{totalAmount}.isEmpty()) ? $P{totalAmount} : "Unknown"]]></textFieldExpression>
+								<textFieldExpression><![CDATA[($F{totalAmount} != null && !$F{totalAmount}.isEmpty()) ? $F{totalAmount} : "Unknown"]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -280,11 +279,11 @@
 						</jr:tableHeader>
 						<jr:detailCell style="Table 2_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="180" height="30" uuid="289afe80-cce6-4a0a-9826-bde55cb3d421"/>
+								<reportElement x="0" y="0" width="180" height="30" isPrintWhenDetailOverflows="true" uuid="289afe80-cce6-4a0a-9826-bde55cb3d421"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
 									<font fontName="Arial" pdfFontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 								</textElement>
-								<textFieldExpression><![CDATA[($P{productType} != null && !$P{productType}.isEmpty()) ? $P{productType} : "Unknown"]]></textFieldExpression>
+								<textFieldExpression><![CDATA[($F{productType} != null && !$F{productType}.isEmpty()) ? $F{productType}: "Unknown"]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -304,18 +303,18 @@
 						</jr:tableHeader>
 						<jr:detailCell style="Table 2_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="180" height="30" uuid="3e2cd6aa-e35e-45e1-800a-6c781c986dc2"/>
+								<reportElement style="Table 1_TH" x="0" y="0" width="180" height="30" isPrintWhenDetailOverflows="true" uuid="3e2cd6aa-e35e-45e1-800a-6c781c986dc2"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
 									<font fontName="Arial" pdfFontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 								</textElement>
-								<textFieldExpression><![CDATA[($P{contractNo} != null && !$P{contractNo}.isEmpty()) ? $P{contractNo} : "Unknown"]]></textFieldExpression>
+								<textFieldExpression><![CDATA[($F{contractNo} != null && !$F{contractNo}.isEmpty()) ? $F{contractNo} : "Unknown"]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
 				</jr:table>
 			</componentElement>
 			<staticText>
-				<reportElement x="80" y="70" width="475" height="120" uuid="6007e388-178a-41a9-803a-061f831524d6"/>
+				<reportElement positionType="Float" x="80" y="70" width="475" height="120" uuid="6007e388-178a-41a9-803a-061f831524d6"/>
 				<textElement textAlignment="Right" markup="none">
 					<font fontName="Arial" size="12" pdfFontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 					<paragraph lineSpacingSize="1.0"/>

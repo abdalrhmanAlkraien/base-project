@@ -30,6 +30,9 @@ public class ReportEntity extends AbstractEntity {
     @Column(name = "data", columnDefinition = "JSON")
     private String data;
 
+    @Column(name = "referance_id", unique = true)
+    private String referenceId;
+
     @Enumerated(EnumType.STRING)
     private Source source;
 
@@ -38,4 +41,7 @@ public class ReportEntity extends AbstractEntity {
 
     @Enumerated(EnumType.STRING)
     private Language reportLanguage;
+
+    @Enumerated(EnumType.STRING)
+    private ResponseType responseType;
 }

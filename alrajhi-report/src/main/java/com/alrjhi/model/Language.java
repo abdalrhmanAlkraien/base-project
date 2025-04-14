@@ -7,5 +7,5 @@ package com.alrjhi.model;
  */
 public enum Language {
 
-    ARABIC, ENGLISH
+    AR, EN
 }

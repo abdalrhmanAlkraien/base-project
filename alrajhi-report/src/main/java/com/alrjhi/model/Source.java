@@ -7,5 +7,5 @@ package com.alrjhi.model;
  */
 public enum Source {
 
-    DIGITAL_CHANNEL, EBS
+    DIGITAL_CHANNEL, ESB
 }

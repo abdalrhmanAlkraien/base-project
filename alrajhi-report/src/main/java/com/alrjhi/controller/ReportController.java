@@ -2,9 +2,9 @@ package com.alrjhi.controller;
 
 import com.alrajhi.constant.EndPoints;
 import com.alrajhi.util.GenericResponse;
-import com.alrjhi.dto.request.ReportRequest;
-import com.alrjhi.dto.response.ReportResponse;
-import com.alrjhi.service.ReportService;
+import com.alrjhi.dto.request.DocumentRequest;
+import com.alrjhi.dto.response.DocumentResponse;
+import com.alrjhi.service.DocumentService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -16,7 +16,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import net.sf.jasperreports.engine.JRException;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,22 +27,22 @@ import org.springframework.web.bind.annotation.RestController;
  * @Time: 11:34 PM
  */
 @RestController
-@RequestMapping(EndPoints.REPORT)
+@RequestMapping(EndPoints.DOCUMENT)
 @RequiredArgsConstructor
 @Log4j2
 public class ReportController {
 
-    private final ReportService reportService;
+    private final DocumentService documentService;
 
     @Operation(summary = "create a new API to generate report")
     @ApiResponses(value = {
 
             @ApiResponse(responseCode = "200", content = {
                     @Content(
-                            mediaType = "application/pdf",
-                            schema = @Schema(implementation = ReportRequest.class)
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = DocumentRequest.class)
                     )
-            }, description = "Generate the report"),
+            }, description = "Generate the document"),
 
             @ApiResponse(responseCode = "400", content = {
                     @Content
@@ -52,13 +52,13 @@ public class ReportController {
                     @Content
             }, description = "Not Found")
     })
-    @GetMapping
-    public ResponseEntity<GenericResponse<ReportResponse>> generateReport(
-            @RequestBody @Valid ReportRequest report
+    @PostMapping
+    public ResponseEntity<GenericResponse<DocumentResponse>> generateDocument(
+            @RequestBody @Valid DocumentRequest report
     ) throws JRException, JsonProcessingException {
 
         return ResponseEntity
                 .ok()
-                .body(GenericResponse.success(reportService.generateReport(report)));
+                .body(GenericResponse.success(documentService.generateReport(report)));
     }
 }

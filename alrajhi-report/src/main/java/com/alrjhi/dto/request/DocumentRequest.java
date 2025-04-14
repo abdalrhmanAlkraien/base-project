@@ -1,11 +1,15 @@
-package com.alrjhi.dto.response;
+package com.alrjhi.dto.request;
 
 import com.alrjhi.model.Language;
 import com.alrjhi.model.LetterType;
+import com.alrjhi.model.ResponseType;
 import com.alrjhi.model.Source;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.Map;
 
 /**
  * @author: Abd-alrhman Alkraien.
@@ -14,12 +18,19 @@ import lombok.Data;
  */
 @Data
 @AllArgsConstructor
-@Builder
-public class ReportResponse {
+@NoArgsConstructor
+public class DocumentRequest {
 
-    private Long id;
-    private String file;
+    private Map<String, Object> params;
+
+    @NotNull
+    private ResponseType responseType;
+
+    @NotNull
     private Source source;
+
+    @NotNull
     private LetterType letterType;
+    @NotNull
     private Language reportLanguage;
 }
