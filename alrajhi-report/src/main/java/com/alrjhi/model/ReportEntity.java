@@ -33,6 +33,9 @@ public class ReportEntity extends AbstractEntity {
     @Column(name = "referance_id", unique = true)
     private String referenceId;
 
+    @Column(name = "request_id")
+    private String requestId;
+
     @Enumerated(EnumType.STRING)
     private Source source;
 

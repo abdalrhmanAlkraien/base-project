@@ -24,7 +24,6 @@ import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
-import net.sf.jasperreports.engine.data.JRMapCollectionDataSource;
 import org.springframework.stereotype.Service;
 
 import java.io.ByteArrayOutputStream;
@@ -32,14 +31,13 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
-import java.util.stream.IntStream;
+import java.util.stream.Collectors;
 
 @Service
 @Log4j2
@@ -93,9 +91,12 @@ public class JasperDocumentService implements DocumentService {
                     throw new BusinessRoleException(BusinessErrorCodes.REPORT_IS_NULL);
                 }
 
-                List<Map<String, Map<String, String>>> tables = mapper.convertValue(
-                        documentRequest.getParams().get("tables"),
-                        new TypeReference<List<Map<String, Map<String, String>>>>() {
+                List<List<Map<String, String>>> tables = mapper.convertValue(
+                        ((List<Map<String, Object>>) documentRequest.getParams().get("tables"))
+                                .stream()
+                                .map(table -> table.get("rows"))
+                                .collect(Collectors.toList()),
+                        new TypeReference<List<List<Map<String, String>>>>() {
                         }
                 );
 
@@ -103,39 +104,6 @@ public class JasperDocumentService implements DocumentService {
                 if (tables.isEmpty()) {
                     throw new BusinessRoleException(BusinessErrorCodes.REPORT_IS_NULL);
                 }
-                Map<Integer, Map<String, Map<String,String>>> dataSource = new HashMap<>();
-
-                IntStream.range(0, tables.size())
-                        .forEach(i -> {
-
-                            Map<String, Map<String, String>> row = tables.get(i);
-
-                            log.info("collect data of table {}", i);
-
-                            if (i == 0) {
-
-                                if (!row.isEmpty()) {
-
-                                    row.forEach((k, v) -> {
-
-                                        Map<String, Map<String, String>> tempMap = dataSource.get(i); //original
-
-                                        if(dataSource.containsKey(i)) {
-                                            tempMap = dataSource.get(i);
-                                            tempMap.put(k,new HashMap<>(v));
-                                            dataSource.put(i, tempMap);
-                                        } else {
-                                            dataSource.put(i, new HashMap<>(Map.of(k,v)));
-                                        }
-
-                                    });
-
-                                }
-
-                            } else if (i == 1) {
-                                // If there is any other tables
-                            }
-                        });
 
                 parameters.put("refNo", documentRequest.getParams().get("referenceNumber"));
                 parameters.put("customerName", documentRequest.getParams().get("customerName"));
@@ -143,9 +111,7 @@ public class JasperDocumentService implements DocumentService {
 
                 Collection<Map<String, ?>> table1DataSource = new ArrayList<>();
 
-                dataSource.get(0).forEach((k, v) -> {
-                    table1DataSource.add(v);
-                });
+                tables.get(0).forEach(table1DataSource::add);
 
 
                 JRDataSource tableDataSource = new JRBeanCollectionDataSource(table1DataSource);
@@ -175,6 +141,7 @@ public class JasperDocumentService implements DocumentService {
                         .source((documentRequest.getSource()))
                         .letterType(documentRequest.getLetterType())
                         .responseType(documentRequest.getResponseType())
+                        .requestId(documentRequest.getRequestId())
                         .build());
 
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();

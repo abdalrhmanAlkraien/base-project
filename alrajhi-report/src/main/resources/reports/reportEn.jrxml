@@ -306,7 +306,7 @@
 This certification pertains solely to the financing debt mentioned above, as of the time and date of issuance. It does not extend to:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="130" width="560" height="50" uuid="b588f657-aab9-4747-a7d9-b9a7ac634012"/>
+				<reportElement x="0" y="130" width="560" height="50" positionType="Float" uuid="b588f657-aab9-4747-a7d9-b9a7ac634012"/>
 				<textElement textAlignment="Left" markup="none">
 					<font fontName="Arial" size="12" pdfFontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 					<paragraph lineSpacingSize="1.0"/>
@@ -316,7 +316,7 @@ This certification pertains solely to the financing debt mentioned above, as of 
 ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="180" width="560" height="20" uuid="6a102280-b436-40d8-86e9-2d44dbab3dc1">
+				<reportElement x="0" y="180" width="560" height="20" positionType="Float" uuid="6a102280-b436-40d8-86e9-2d44dbab3dc1">
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Left" markup="none">
@@ -325,7 +325,7 @@ This certification pertains solely to the financing debt mentioned above, as of 
 				<text><![CDATA[This certification has been issued at the request of the client, with no liability on the part of the bank.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="200" width="560" height="20" uuid="775544db-d13e-4616-badc-d2dc05de7860">
+				<reportElement x="0" y="200" width="560" height="20" positionType="Float" uuid="775544db-d13e-4616-badc-d2dc05de7860">
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Left" markup="none">
@@ -334,7 +334,7 @@ This certification pertains solely to the financing debt mentioned above, as of 
 				<text><![CDATA[Note:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="220" width="560" height="80" uuid="1e9e5e1f-7895-4ed4-96c2-820f5f0d2743"/>
+				<reportElement x="0" y="220" width="560" height="80" positionType="Float" uuid="1e9e5e1f-7895-4ed4-96c2-820f5f0d2743"/>
 				<textElement textAlignment="Left" markup="none">
 					<font fontName="Arial" size="12" pdfFontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 					<paragraph lineSpacingSize="1.0"/>

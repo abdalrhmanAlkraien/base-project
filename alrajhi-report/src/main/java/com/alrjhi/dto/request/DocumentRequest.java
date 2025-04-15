@@ -24,6 +24,9 @@ public class DocumentRequest {
     private Map<String, Object> params;
 
     @NotNull
+    private String requestId;
+
+    @NotNull
     private ResponseType responseType;
 
     @NotNull

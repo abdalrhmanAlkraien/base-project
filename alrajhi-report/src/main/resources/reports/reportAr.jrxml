@@ -328,7 +328,7 @@ FROM talbe]]>
 • تم تحرير هذه الإفادة  بناء على طلب العميل دون أدنى مسؤولية على المصرف.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="110" y="220" width="445" height="80" uuid="f21637e5-4526-4d86-814d-c5cfcae03d94"/>
+				<reportElement x="110" y="220" width="445" height="80" positionType="Float" uuid="f21637e5-4526-4d86-814d-c5cfcae03d94"/>
 				<textElement textAlignment="Right" markup="none">
 					<font fontName="Arial" size="12" pdfFontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
@@ -339,7 +339,7 @@ FROM talbe]]>
 هذه الوثيقة ليست لغرض شراء المديونية من أي جهة تمويلية      ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="230" y="190" width="100" height="18" uuid="9183f200-a737-43c3-8d9e-fb9ab830dc87"/>
+				<reportElement x="230" y="190" width="100" positionType="Float" height="18" uuid="9183f200-a737-43c3-8d9e-fb9ab830dc87"/>
 				<textElement textAlignment="Center">
 					<font fontName="Arial" size="12"/>
 				</textElement>
