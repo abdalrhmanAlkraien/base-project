@@ -1,6 +1,10 @@
 package com.alrjhi.model;
 
 import com.alrajhi.model.AbstractEntity;
+import com.alrajhi.model.enumerate.Language;
+import com.alrajhi.model.enumerate.LetterType;
+import com.alrajhi.model.enumerate.ResponseType;
+import com.alrajhi.model.enumerate.Source;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -25,7 +29,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ReportEntity extends AbstractEntity {
+public class DocumentEntity extends AbstractEntity {
 
     @Column(name = "data", columnDefinition = "JSON")
     private String data;

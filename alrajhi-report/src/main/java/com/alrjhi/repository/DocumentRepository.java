@@ -1,7 +1,7 @@
 package com.alrjhi.repository;
 
 import com.alrajhi.repository.ApplicationRepository;
-import com.alrjhi.model.ReportEntity;
+import com.alrjhi.model.DocumentEntity;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -10,5 +10,5 @@ import org.springframework.stereotype.Repository;
  * @Time: 1:54 PM
  */
 @Repository
-public interface ReportRepository extends ApplicationRepository<ReportEntity, Long> {
+public interface DocumentRepository extends ApplicationRepository<DocumentEntity, Long> {
 }
