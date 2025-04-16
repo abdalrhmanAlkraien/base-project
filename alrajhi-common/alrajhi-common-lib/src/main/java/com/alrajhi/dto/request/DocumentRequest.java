@@ -1,27 +1,30 @@
-package com.alrjhi.dto.request;
+package com.alrajhi.dto.request;
 
-import com.alrjhi.model.Language;
-import com.alrjhi.model.LetterType;
-import com.alrjhi.model.ResponseType;
-import com.alrjhi.model.Source;
+import com.alrajhi.model.enumerate.Language;
+import com.alrajhi.model.enumerate.LetterType;
+import com.alrajhi.model.enumerate.ResponseType;
+import com.alrajhi.model.enumerate.Source;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.util.Map;
 
 /**
  * @author: Abd-alrhman Alkraien.
- * @Date: 7/4/2025
- * @Time: 10:49 AM
+ * @Date: 4/15/2025
+ * @Time: 3:30 PM
  */
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
+@NotNull
 public class DocumentRequest {
 
+
     private Map<String, Object> params;
+
+    @NotNull
+    private String cicNum;
 
     @NotNull
     private String requestId;

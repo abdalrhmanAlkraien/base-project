@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/IQ-backend-.iml" filepath="$PROJECT_DIR$/.idea/IQ-backend-.iml" />
       <module fileurl="file://$PROJECT_DIR$/alrajhi-report/alrajhi-report.iml" filepath="$PROJECT_DIR$/alrajhi-report/alrajhi-report.iml" />
+      <module fileurl="file://$PROJECT_DIR$/alrajhi-common/alrajhi-soap-lib/alrajhi-soap-lib.iml" filepath="$PROJECT_DIR$/alrajhi-common/alrajhi-soap-lib/alrajhi-soap-lib.iml" />
     </modules>
   </component>
 </project>

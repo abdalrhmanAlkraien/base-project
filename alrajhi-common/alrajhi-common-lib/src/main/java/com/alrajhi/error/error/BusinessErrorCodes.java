@@ -14,6 +14,7 @@ public enum BusinessErrorCodes {
 
     NO_RECORD_FOUND("GEN-001", "No record found."),
     CANT_CALL_INTERNAL_API("GEN-002", "Connection Issue"),
+    ESB_INTERNAL_API("GEN-003", "Connection Issue"),
     WRONG_LETTER_TYPE("REP-001", "The report letter type is wrong"),
     REPORT_IS_NULL("REP-002", "Report is null"),
     REPORT_NOT_FOUND("REP-003", "Report not found"),

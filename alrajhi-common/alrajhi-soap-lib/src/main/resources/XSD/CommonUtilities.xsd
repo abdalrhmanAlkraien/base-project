@@ -1,0 +1,1261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 (http://www.altova.com) by TEAM ViRiLiTY (VRL) -->
+<!-- Created by Ahmed Abdelaal(Ejada) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:arb="http://www.alrajhiwebservices.com/" xmlns:cmn="http://www.alrajhiwebservices.com/CommonUtilities" targetNamespace="http://www.alrajhiwebservices.com/CommonUtilities">
+	<xsd:import namespace="http://www.alrajhiwebservices.com/" schemaLocation="CommonLibV2.xsd"/>
+	<!-- #####################Messages Declarations#################### -->
+	<!-- LOVExtInq Inquiry -->
+	<xsd:element name="LOVExtInqRq" type="cmn:LOVExtInqRq_Type"/>
+	<xsd:element name="LOVExtInqRs" type="cmn:LOVExtInqRs_Type"/>
+	<!-- LOV Inquiry -->
+	<xsd:element name="LOVInqRq" type="cmn:LOVInqRq_Type"/>
+	<xsd:element name="LOVInqRs" type="cmn:LOVInqRs_Type"/>
+	<!-- LDAP Inquiry -->
+	<xsd:element name="LDAPInqRq" type="cmn:LDAPInqRq_Type"/>
+	<xsd:element name="LDAPInqRs" type="cmn:LDAPInqRs_Type"/>
+	<!-- GetAmtInWords -->
+	<xsd:element name="GetAmtInWordsRq" type="cmn:GetAmtInWordsRq_Type"/>
+	<xsd:element name="GetAmtInWordsRs" type="cmn:GetAmtInWordsRs_Type"/>
+	<!-- VATCalculator -->
+	<xsd:element name="VATCalculatorRq" type="cmn:VATCalculatorRq_Type"/>
+	<xsd:element name="VATCalculatorRs" type="cmn:VATCalculatorRs_Type"/>
+	<!-- CommonValidationInq -->
+	<xsd:element name="CommonValidationInqRq" type="cmn:CommonValidationInqRq_Type"/>
+	<xsd:element name="CommonValidationInqRs" type="cmn:CommonValidationInqRs_Type"/>
+	<!-- ValidatePostalCode -->
+	<xsd:element name="ValidatePostalCodeRq" type="cmn:ValidatePostalCodeRq_Type"/>
+	<xsd:element name="ValidatePostalCodeRs" type="cmn:ValidatePostalCodeRs_Type"/>
+	<!-- FileNetUpload -->
+	<xsd:element name="FileNetUploadRq" type="cmn:FileNetUploadRq_Type"/>
+	<xsd:element name="FileNetUploadRs" type="cmn:FileNetUploadRs_Type"/>
+	<!-- FileNetDownload -->
+	<xsd:element name="FileNetDownloadRq" type="cmn:FileNetDownloadRq_Type"/>
+	<xsd:element name="FileNetDownloadRs" type="cmn:FileNetDownloadRs_Type"/>
+	<!-- FileNetDelete -->
+	<xsd:element name="FileNetDeleteRq" type="cmn:FileNetDeleteRq_Type"/>
+	<xsd:element name="FileNetDeleteRs" type="cmn:FileNetDeleteRs_Type"/>
+	<!-- FileNetDocMng -->
+	<xsd:element name="FileNetDocMngRq" type="cmn:FileNetDocMngRq_Type"/>
+	<xsd:element name="FileNetDocMngRs" type="cmn:FileNetDocMngRs_Type"/>
+	<!-- SignDoc -->
+	<xsd:element name="SignDocRq" type="cmn:SignDocRq_Type"/>
+	<xsd:element name="SignDocRs" type="cmn:SignDocRs_Type"/>
+	<!-- CompleteSignDoc -->
+	<xsd:element name="CompleteSignDocRq" type="cmn:CompleteSignDocRq_Type"/>
+	<!-- CustProductEligibilityInq -->
+	<xsd:element name="CustProductEligibilityInqRq" type="cmn:CustProductEligibilityInqRq_Type"/>
+	<xsd:element name="CustProductEligibilityInqRs" type="cmn:CustProductEligibilityInqRs_Type"/>
+	<!-- KioskAvailabilityInq -->
+	<xsd:element name="KioskAvailabilityInqRq" type="cmn:KioskAvailabilityInqRq_Type"/>
+	<xsd:element name="KioskAvailabilityInqRs" type="cmn:KioskAvailabilityInqRs_Type"/>
+	<!-- CallBackFeedBack-->
+	<xsd:element name="IVRCallbackMngRq" type="cmn:IVRCallbackMngRq_Type"/>
+	<xsd:element name="IVRCallbackMngRs" type="cmn:IVRCallbackMngRs_Type"/>
+	<xsd:element name="CallBackFeedBackMngRq" type="cmn:CallBackFeedBackMngRq_Type"/>
+	<xsd:element name="CallBackFeedBackMngRs" type="cmn:CallBackFeedBackMngRs_Type"/>
+	<xsd:element name="CallBackFeedBackInqRq" type="cmn:CallBackFeedBackInqRq_Type"/>
+	<xsd:element name="CallBackFeedBackInqRs" type="cmn:CallBackFeedBackInqRs_Type"/>
+	<!-- FeeValueInq -->
+	<xsd:element name="FeeValueInqRq" type="cmn:FeeValueInqRq_Type"/>
+	<xsd:element name="FeeValueInqRs" type="cmn:FeeValueInqRs_Type"/>
+	<!-- PersonalCallback -->
+	<xsd:element name="PersonalCallbackRq" type="cmn:PersonalCallbackRq_Type"/>
+	<xsd:element name="PersonalCallbackRs" type="cmn:PersonalCallbackRs_Type"/>
+	<!-- LegalCaseMng -->
+	<xsd:element name="LegalCaseMngRq" type="cmn:LegalCaseMngRq_Type"/>
+	<xsd:element name="LegalCaseMngRs" type="cmn:LegalCaseMngRs_Type"/>
+	<!-- FraudCustCheck -->
+	<xsd:element name="FraudCustCheckRq" type="cmn:FraudCustCheckRq_Type"/>
+	<xsd:element name="FraudCustCheckRs" type="cmn:FraudCustCheckRs_Type"/>
+	<!-- CustWhitelistMng --> 
+	<xsd:element name="CustWhitelistMngRq" type="cmn:CustWhitelistMngRq_Type"/>
+	<xsd:element name="CustWhitelistMngRs" type="cmn:CustWhitelistMngRs_Type"/>
+	<!-- EBusinessCallbackMng -->
+	<xsd:element name="EBusinessCallbackMngRq" type="cmn:EBusinessCallbackMngRq_Type"/>
+	<xsd:element name="EBusinessCallbackMngRs" type="cmn:EBusinessCallbackMngRs_Type"/>
+	<!-- #####################Request/Response Declarations#################### -->
+	<xsd:complexType name="LOVExtInqRq_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">LOVExt Inquiry Request Message</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRqHdr_Type"/>
+			<xsd:element name="Body" type="cmn:LOVExtInqRqBody_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="LOVExtInqRs_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">LOV Inquiry Response Message</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRsHdr_Type"/>
+			<xsd:element name="Body" type="cmn:LOVExtInqRsBody_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="LOVInqRq_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">LOV Inquiry Request Message</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRqHdr_Type"/>
+			<xsd:element name="Body" type="cmn:LOVInqRqBody_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="LOVInqRs_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">LOV Inquiry Response Message</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRsHdr_Type"/>
+			<xsd:element name="Body" type="cmn:LOVInqRsBody_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="LDAPInqRq_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">LDAP Inquiry Request Message</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRqHdr_Type"/>
+			<xsd:element name="Body" type="cmn:LDAPInqRqBody_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="LDAPInqRs_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">LDAP Inquiry Response Message</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRsHdr_Type"/>
+			<xsd:element name="Body" type="cmn:LDAPInqRsBody_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GetAmtInWordsRq_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">GetAmtInWords Request Message</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRqHdr_Type"/>
+			<xsd:element name="Body" type="cmn:GetAmtInWordsRqBody_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GetAmtInWordsRs_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">GetAmtInWords Response Message</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRsHdr_Type"/>
+			<xsd:element name="Body" type="cmn:GetAmtInWordsRsBody_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="VATCalculatorRq_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">VATCalculator Request Message</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRqHdr_Type"/>
+			<xsd:element name="Body" type="cmn:VATCalculatorRqBody_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="VATCalculatorRs_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">VATCalculator Response Message</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRsHdr_Type"/>
+			<xsd:element name="Body" type="cmn:VATCalculatorRsBody_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CommonValidationInqRq_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">Multi Factor Eligibility Inquiry Request Message</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRqHdr_Type"/>
+			<xsd:element name="Body" type="cmn:CommonValidationInqRqBody_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CommonValidationInqRs_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">Multi Factor Eligibility Inquiry Response Message</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRsHdr_Type"/>
+			<xsd:element name="Body" type="cmn:CommonValidationInqRsBody_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ValidatePostalCodeRq_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">Validate Postal Code Request Message</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRqHdr_Type"/>
+			<xsd:element name="Body" type="cmn:ValidatePostalCodeRqBody_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ValidatePostalCodeRs_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">Validate Postal Code Response Message</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRsHdr_Type"/>
+			<xsd:element name="Body" type="cmn:ValidatePostalCodeRsBody_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FileNetUploadRq_Type">
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRqHdr_Type"/>
+			<xsd:element name="Body" type="cmn:FileNetUploadRqBody_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FileNetUploadRs_Type">
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRsHdr_Type"/>
+			<xsd:element name="Body" type="cmn:FileNetUploadRsBody_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FileNetDownloadRq_Type">
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRqHdr_Type"/>
+			<xsd:element name="Body" type="cmn:FileNetDownloadRqBody_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FileNetDownloadRs_Type">
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRsHdr_Type"/>
+			<xsd:element name="Body" type="cmn:FileNetDownloadRsBody_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FileNetDeleteRq_Type">
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRqHdr_Type"/>
+			<xsd:element name="Body" type="cmn:FileNetDeleteRqBody_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FileNetDeleteRs_Type">
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRsHdr_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FileNetDocMngRq_Type">
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRqHdr_Type"/>
+			<xsd:element name="Body" type="cmn:FileNetDocMngRqBody_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FileNetDocMngRs_Type">
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRsHdr_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SignDocRq_Type">
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRqHdr_Type"/>
+			<xsd:element name="Body" type="cmn:SignDocRqBody_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SignDocRs_Type">
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRsHdr_Type"/>
+			<xsd:element name="Body" type="cmn:SignDocRsBody_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CompleteSignDocRq_Type">
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRqHdr_Type"/>
+			<xsd:element name="Body" type="cmn:CompleteSignDocRqBody_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CustProductEligibilityInqRq_Type">
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRqHdr_Type"/>
+			<xsd:element name="Body" type="cmn:CustProductEligibilityInqRqBody_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CustProductEligibilityInqRs_Type">
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRsHdr_Type"/>
+			<xsd:element name="Body" type="cmn:CustProductEligibilityInqRsBody_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="KioskAvailabilityInqRq_Type">
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRqHdr_Type"/>
+			<xsd:element name="Body" type="cmn:KioskAvailabilityInqRqBody_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="KioskAvailabilityInqRs_Type">
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRsHdr_Type"/>
+			<xsd:element name="Body" type="cmn:KioskAvailabilityInqRsBody_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- IVRCallbackMng-->
+	<xsd:complexType name="IVRCallbackMngRq_Type">
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRqHdr_Type"/>
+			<xsd:element name="Body" type="cmn:IVRCallbackMngRqBody_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="IVRCallbackMngRs_Type">
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRsHdr_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- CallBackFeedBackMng-->
+	<xsd:complexType name="CallBackFeedBackMngRq_Type">
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRqHdr_Type"/>
+			<xsd:element name="Body" type="cmn:CallBackFeedBackMngRqBody_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CallBackFeedBackMngRs_Type">
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRsHdr_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- CallBackFeedBackInq-->
+	<xsd:complexType name="CallBackFeedBackInqRq_Type">
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRqHdr_Type"/>
+			<xsd:element name="Body" type="cmn:CallBackFeedBackInqRqBody_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CallBackFeedBackInqRs_Type">
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRsHdr_Type"/>
+			<xsd:element name="Body" type="cmn:CallBackFeedBackInqRsBody_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- FeeValueInq-->
+	<xsd:complexType name="FeeValueInqRq_Type">
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRqHdr_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FeeValueInqRs_Type">
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRsHdr_Type"/>
+			<xsd:element name="Body" type="cmn:FeeValueInqRsBody_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- PersonalCallback-->
+	<xsd:complexType name="PersonalCallbackRq_Type">
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRqHdr_Type"/>
+			<xsd:element name="Body" type="cmn:PersonalCallbackRqBody_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PersonalCallbackRs_Type">
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRsHdr_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- LegalCaseMng-->
+	<xsd:complexType name="LegalCaseMngRq_Type">
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRqHdr_Type"/>
+			<xsd:element name="Body" type="cmn:LegalCaseMngRqBody_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="LegalCaseMngRs_Type">
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRsHdr_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- FraudCustCheck-->
+	<xsd:complexType name="FraudCustCheckRq_Type">
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRqHdr_Type"/>
+			<xsd:element name="Body" type="cmn:FraudCustCheckRqBody_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FraudCustCheckRs_Type">
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRsHdr_Type"/>
+			<xsd:element name="Body" type="cmn:FraudCustCheckRsBody_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- CustWhitelistMng-->
+	<xsd:complexType name="CustWhitelistMngRq_Type">
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRqHdr_Type"/>
+			<xsd:element name="Body" type="cmn:CustWhitelistMngRqBody_Type" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CustWhitelistMngRs_Type">
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRsHdr_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- EBusinessCallbackMngRq -->
+	<xsd:complexType name="EBusinessCallbackMngRq_Type">
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRqHdr_Type"/>
+			<xsd:element name="Body" type="cmn:EBusinessCallbackMngRqBody_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- EBusinessCallbackMngRs -->
+	<xsd:complexType name="EBusinessCallbackMngRs_Type">
+		<xsd:sequence>
+			<xsd:element name="Hdr" type="arb:MsgRsHdr_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- #####################Body Declarations#################### -->
+	<xsd:complexType name="LOVExtInqRqBody_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">LOV Request Body</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="RecPgCtrlIn" type="arb:RecPgCtrlIn_Type" minOccurs="0"/>
+			<xsd:element name="LOVTyp" type="cmn:LOVTyp_Type"/>
+			<xsd:element name="LOVCd1" type="cmn:LOVCd_Type" minOccurs="0"/>
+			<xsd:element name="LOVCd2" type="cmn:LOVCd_Type" minOccurs="0"/>
+			<xsd:element name="LOVCd3" type="cmn:LOVCd_Type" minOccurs="0"/>
+			<xsd:element name="LOVCd4" type="cmn:LOVCd_Type" minOccurs="0"/>
+			<xsd:element name="LOVCd5" type="cmn:LOVCd_Type" minOccurs="0"/>
+			<xsd:element name="LOVCd6" type="cmn:LOVCd_Type" minOccurs="0"/>
+			<xsd:element name="LOVCd7" type="cmn:LOVCd_Type" minOccurs="0"/>
+			<xsd:element name="LOVCd8" type="cmn:LOVCd_Type" minOccurs="0"/>
+			<xsd:element name="LOVCd9" type="cmn:LOVCd_Type" minOccurs="0"/>
+			<xsd:element name="LOVCd10" type="cmn:LOVCd_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="LOVExtInqRsBody_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">LOV Response Body</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="RecPgCtrlOut" type="arb:RecPgCtrlOut_Type" minOccurs="0"/>
+			<xsd:element name="LOVExtLst" type="cmn:LOVExtLst_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="LOVInqRqBody_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">LOV Request Body</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="RecPgCtrlIn" type="arb:RecPgCtrlIn_Type" minOccurs="0"/>
+			<xsd:element name="LOVTyp" type="cmn:LOVTyp_Type"/>
+			<xsd:element name="LOVCd1" type="cmn:LOVCd_Type" minOccurs="0"/>
+			<xsd:element name="LOVCd2" type="cmn:LOVCd_Type" minOccurs="0"/>
+			<xsd:element name="LOVCd3" type="cmn:LOVCd_Type" minOccurs="0"/>
+			<xsd:element name="LOVCd4" type="cmn:LOVCd_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="LOVInqRsBody_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">LOV Response Body</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="RecPgCtrlOut" type="arb:RecPgCtrlOut_Type" minOccurs="0"/>
+			<xsd:element name="LOVList" type="cmn:LOVList_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="LDAPInqRqBody_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">LOV Request Body</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="BaseUnit" type="cmn:BaseUnit_Type"/>
+			<xsd:element name="FltrAttribsList" type="cmn:FltrAttribsList_Type"/>
+			<xsd:element name="ReqAttribsList" type="cmn:ReqAttribsList_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="LDAPInqRsBody_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">LOV Response Body</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="RecPgCtrlOut" type="arb:RecPgCtrlOut_Type" minOccurs="0"/>
+			<xsd:element name="ReturnedList" type="cmn:ReturnedList_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GetAmtInWordsRqBody_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">GetAmtInWords Request Body</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Amt" type="arb:CurrencyAmt_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GetAmtInWordsRsBody_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">GetAmtInWords Response Body</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="AmtInWords" type="arb:String_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="VATCalculatorRqBody_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">VATCalculator Request Body</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Amt" type="arb:CurrencyAmt_Type" minOccurs="0"/>
+			<xsd:element name="Status" type="arb:String_Type" minOccurs="0"/>
+			<xsd:element name="RecPgCtrlIn" type="arb:RecPgCtrlIn_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="VATCalculatorRsBody_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">VATCalculator Response Body</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="RecPgCtrlOut" type="arb:RecPgCtrlOut_Type" minOccurs="0"/>
+			<xsd:element name="Amt" type="arb:CurrencyAmt_Type" minOccurs="0"/>
+			<xsd:element name="VATAmt" type="arb:CurrencyAmt_Type" minOccurs="0"/>
+			<xsd:element name="TotalAmt" type="arb:CurrencyAmt_Type" minOccurs="0"/>
+			<xsd:element name="VatLst" type="cmn:VatLst_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CommonValidationInqRqBody_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">Multi Factor Eligibility Inquiry Request Body</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="AuthFlg" type="arb:YNFlg_Type" minOccurs="0"/>
+			<xsd:element name="TrxnOTPCode" type="cmn:TrxnOTPCode_Type" minOccurs="0"/>
+			<xsd:element name="Operation" type="arb:Code11_Type" minOccurs="0"/>
+			<xsd:element name="Param1" type="arb:Code11_Type" minOccurs="0"/>
+			<xsd:element name="Param2" type="arb:Code11_Type" minOccurs="0"/>
+			<xsd:element name="Param3" type="arb:Code11_Type" minOccurs="0"/>
+			<xsd:element name="Param4" type="arb:Code11_Type" minOccurs="0"/>
+			<xsd:element name="Param5" type="arb:Code11_Type" minOccurs="0"/>
+			<xsd:element name="CustomerSegment" type="arb:Segment_Type" minOccurs="0"/>
+			<xsd:element name="Amt" type="arb:CurrencyAmt_Type" minOccurs="0"/>
+			<xsd:element name="FPTFlag" type="arb:YNFlg_Type" minOccurs="0"/>
+			<xsd:element name="OTPPurpose" type="arb:Code_Type" minOccurs="0"/>
+			<xsd:element name="RiskFactor" type="cmn:RiskFactor_Type" minOccurs="0"/>
+			<xsd:element name="SelfIDFlg" type="arb:YNFlg_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CommonValidationInqRsBody_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">Multi Factor Eligibility Inquiry Response Body</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="MultiFactorEligibleFlg" type="arb:YNFlg_Type" minOccurs="0"/>
+			<xsd:element name="OTPType" type="cmn:OTPType_Type" minOccurs="0"/>
+			<xsd:element name="VATFlg" type="arb:YNFlg_Type" minOccurs="0"/>
+			<xsd:element name="VATInfo" type="cmn:VATInfo_Type" minOccurs="0"/>
+			<xsd:element name="Amt" type="arb:CurrencyAmt_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ValidatePostalCodeRqBody_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">Validate Postal Code Request Message</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="CityCode" type="arb:CityCode10_Type" minOccurs="0"/>
+			<xsd:element name="PostalCode" type="cmn:PostalCode_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ValidatePostalCodeRsBody_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">Validate Postal Code Response Body</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="ValidationFlg" type="arb:YNFlg_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FileNetUploadRqBody_Type">
+		<xsd:sequence>
+			<xsd:element name="ServiceType" type="cmn:ServiceType_Type"/>
+			<xsd:element name="FileNetID" type="cmn:FileNetID_Type" minOccurs="0"/>
+			<xsd:element name="FileName" type="cmn:FileName_Type"/>
+			<xsd:element name="FileContent" type="cmn:FileContent_Type"/>
+			<xsd:element name="MIME" type="cmn:MIME_Type" minOccurs="0"/>
+			<xsd:element name="FilePath" type="cmn:FilePath_Type" minOccurs="0"/>
+			<xsd:element name="MetaDataLst" type="cmn:MetaDataLst_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FileNetUploadRsBody_Type">
+		<xsd:sequence>
+			<xsd:element name="FileNetID" type="cmn:FileNetID_Type"/>
+			<xsd:element name="MIME" type="cmn:MIME_Type" minOccurs="0"/>
+			<xsd:element name="FileSize" type="arb:Integer_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FileNetDownloadRqBody_Type">
+		<xsd:sequence>
+			<xsd:element name="ServiceType" type="cmn:ServiceType_Type"/>
+			<xsd:element name="SecondaryServiceType" type="cmn:ServiceType_Type" minOccurs="0"/>
+			<xsd:element name="FileNetID" type="cmn:FileNetID_Type" minOccurs="0"/>
+			<xsd:element name="FileNetIDsLst" type="cmn:FileNetIDsLst_Type" minOccurs="0"/>
+			<xsd:element name="MetaDataLst" type="cmn:MetaDataLst_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FileNetDownloadRsBody_Type">
+		<xsd:sequence>
+			<xsd:element name="FileNetID" type="cmn:FileNetID_Type" minOccurs="0"/>
+			<xsd:element name="ServiceType" type="cmn:ServiceType_Type" minOccurs="0"/>
+			<xsd:element name="FileName" type="cmn:FileName_Type" minOccurs="0"/>
+			<xsd:element name="MIME" type="cmn:MIME_Type" minOccurs="0"/>
+			<xsd:element name="FileSize" type="arb:Integer_Type" minOccurs="0"/>
+			<xsd:element name="FileContent" type="cmn:FileContent_Type" minOccurs="0"/>
+			<xsd:element name="FileNetDocsLst" type="cmn:FileNetDocsLst_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FileNetDeleteRqBody_Type">
+		<xsd:sequence>
+			<xsd:element name="ServiceType" type="cmn:ServiceType_Type"/>
+			<xsd:element name="FileNetID" type="cmn:FileNetID_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SignDocRqBody_Type">
+		<xsd:sequence>
+			<xsd:element name="SignerNameEN" type="cmn:FullName100_Type" minOccurs="0"/>
+			<xsd:element name="SignerNameAR" type="cmn:FullName100_Type"/>
+			<xsd:element name="IDNumber" type="arb:IDNum_Type"/>
+			<xsd:element name="MobileNumber" type="arb:UserMobile_Type" minOccurs="0"/>
+			<xsd:element name="UserEMail" type="cmn:UserEMail100_Type" minOccurs="0"/>
+			<xsd:element name="FullAddress" type="cmn:Address100_Type" minOccurs="0"/>
+			<xsd:element name="SignatureDirection" type="cmn:SignatureDirection_Type" minOccurs="0"/>
+			<xsd:choice>
+				<xsd:element name="SignPgLvlCoordinates" type="cmn:SignPgLvlCoordinates_Type" minOccurs="0"/>
+				<xsd:element name="PredefinedCoordinates" type="cmn:PredefinedCoordinates_Type" minOccurs="0"/>
+			</xsd:choice>
+			<xsd:element name="Document" type="arb:String_Type"/>
+			<xsd:element name="SignerImage" type="arb:String_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PredefinedCoordinates_Type">
+		<xsd:sequence>
+			<xsd:element name="SignedPage" type="cmn:SignedPage_Type"/>
+			<xsd:element name="Coordinates" type="cmn:Coordinates_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SignDocRsBody_Type">
+		<xsd:sequence>
+			<xsd:element name="SignedDocument" type="arb:String_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CompleteSignDocRqBody_Type">
+		<xsd:sequence>
+			<xsd:element name="RefNum" type="cmn:RefNum_Type"/>
+			<xsd:element name="Doc" type="cmn:Doc_Type"/>
+			<xsd:element name="DocType" type="cmn:DocType_Type"/>
+			<xsd:element name="DocumentSignature" type="cmn:DocumentSignature_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CustProductEligibilityInqRqBody_Type">
+		<xsd:sequence>
+			<xsd:element name="LoginFlg" type="arb:YNFlg_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CustProductEligibilityInqRsBody_Type">
+		<xsd:sequence>
+			<xsd:element name="CustDtlsLst" type="cmn:CustDtlsLst_Type" minOccurs="0"/>
+			<xsd:element name="CustVIPFlg" type="cmn:CustVIPFlg_Type" minOccurs="0"/>
+			<xsd:element name="CustVIPSegment" type="cmn:CustVIPSegment_Type" minOccurs="0"/>
+			<xsd:element name="CustDailyLimit" type="arb:CurrencyAmt_Type" minOccurs="0"/>
+			<xsd:element name="CustLoginDeviceID" type="cmn:CustLoginDeviceID_Type" minOccurs="0"/>
+			<xsd:element name="CustLoginDeviceSeq" type="cmn:CustLoginDeviceSeq_Type" minOccurs="0"/>
+			<xsd:element name="CustFirstLoginFlg" type="arb:YNFlg_Type" minOccurs="0"/>
+			<xsd:element name="CustLastLoginTimestamp" type="arb:MsgTimestamp_Type" minOccurs="0"/>
+			<xsd:element name="CustLastLogStatus" type="cmn:CustLastLogStatus_Type" minOccurs="0"/>
+			<xsd:element name="CustPasswordExpiryDt" type="arb:Date_Type" minOccurs="0"/>
+			<xsd:element name="CustSMSUsrID" type="cmn:CustSMSUsrID_Type" minOccurs="0"/>
+			<xsd:element name="CustSMSExpiryDt" type="arb:Date_Type" minOccurs="0"/>
+			<xsd:element name="CustSMSStatus" type="cmn:CustSMSStatus_Type" minOccurs="0"/>
+			<xsd:element name="CustATMFlg" type="arb:YNFlg_Type" minOccurs="0"/>
+			<xsd:element name="CustPropertyLst" type="cmn:CustPropertyLst_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FileNetDocMngRqBody_Type">
+		<xsd:sequence>
+			<xsd:element name="ServiceType" type="cmn:ServiceType_Type"/>
+			<xsd:element name="FileNetLst" type="cmn:FileNetLst_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="KioskAvailabilityInqRqBody_Type">
+		<xsd:sequence>
+			<xsd:element name="KioskID" type="cmn:KioskID_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="KioskAvailabilityInqRsBody_Type">
+		<xsd:sequence>
+			<xsd:element name="KioskID" type="cmn:KioskID_Type" minOccurs="0"/>
+			<xsd:element name="MachineFlg" type="arb:YNFlg_Type" minOccurs="0"/>
+			<xsd:element name="CardPrinterFlg" type="arb:YNFlg_Type" minOccurs="0"/>
+			<xsd:element name="CheckbookPrinterFlg" type="arb:YNFlg_Type" minOccurs="0"/>
+			<xsd:element name="StatementPrinterFlg" type="arb:YNFlg_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- IVRCallbackMng-->
+	<xsd:complexType name="IVRCallbackMngRqBody_Type">
+		<xsd:sequence>
+			<xsd:element name="EventCode" type="cmn:Param_Type"/>
+			<xsd:element name="RqDtTm" type="arb:Timestamp_Type"/>
+			<xsd:element name="CustomerResponse" type="cmn:CustomerResponse_Type" minOccurs="0"/>
+			<xsd:element name="ContactNum" type="cmn:ContactNum_Type" minOccurs="0"/>
+			<xsd:element name="Param1" type="cmn:Param_Type" minOccurs="0"/>
+			<xsd:element name="Param2" type="cmn:Param_Type" minOccurs="0"/>
+			<xsd:element name="Param3" type="cmn:Param_Type" minOccurs="0"/>
+			<xsd:element name="Param4" type="cmn:Param_Type" minOccurs="0"/>
+			<xsd:element name="Param5" type="cmn:Param_Type" minOccurs="0"/>
+			<xsd:element name="Param6" type="cmn:Param_Type" minOccurs="0"/>
+			<xsd:element name="Param7" type="cmn:Param_Type" minOccurs="0"/>
+			<xsd:element name="Param8" type="cmn:Param_Type" minOccurs="0"/>
+			<xsd:element name="Param9" type="cmn:Param_Type" minOccurs="0"/>
+			<xsd:element name="Param10" type="cmn:Param_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- CallBackFeedBackRouterMng-->
+	<xsd:complexType name="CallBackFeedBackMngRqBody_Type">
+		<xsd:sequence>
+			<xsd:element name="CallBackPurpose" type="cmn:CallBackPurpose_Type"/>
+			<xsd:element name="CustFeedBack" type="arb:YNFlg_Type"/>
+			<xsd:element name="Reference" type="arb:TrxnRef_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- CallBackFeedBackRouterInq-->
+	<xsd:complexType name="CallBackFeedBackInqRqBody_Type">
+		<xsd:sequence>
+			<xsd:element name="CallBackPurpose" type="cmn:CallBackPurpose_Type"/>
+			<xsd:element name="Reference" type="arb:TrxnRef_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CallBackFeedBackInqRsBody_Type">
+		<xsd:sequence>
+			<xsd:element name="ProfileNum" type="arb:CICNum_Type"/>
+			<xsd:element name="CallBackPurpose" type="cmn:CallBackPurpose_Type"/>
+			<xsd:element name="CustFeedBack" type="arb:YNFlg_Type"/>
+			<xsd:element name="Timestamp" type="arb:Timestamp_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- FeeValueInq -->
+	<xsd:complexType name="FeeValueInqRsBody_Type">
+		<xsd:sequence>
+			<xsd:element name="FeeValue" type="arb:Decimal_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- PersonalCallback -->
+	<xsd:complexType name="PersonalCallbackRqBody_Type">
+		<xsd:sequence>
+			<xsd:element name="AccountNumber" type="arb:AcctNum_Type" minOccurs="0"/>
+			<xsd:element name="AgentRefURL" type="arb:String_Type" minOccurs="0"/>
+			<xsd:element name="CallStatus" type="arb:String_Type" minOccurs="0"/>
+			<xsd:element name="CallbackDateTime" type="arb:Timestamp_Type" minOccurs="0"/>
+			<xsd:element name="CampaignRefURL" type="arb:String_Type" minOccurs="0"/>
+			<xsd:element name="CampaignOn" type="arb:String_Type" minOccurs="0"/>
+			<xsd:element name="FirstName" type="arb:Name_Type" minOccurs="0"/>
+			<xsd:element name="LastName" type="arb:Name_Type" minOccurs="0"/>
+			<xsd:element name="MaxAttempts" type="arb:Integer_Type" minOccurs="0"/>
+			<xsd:element name="PhoneNum" type="arb:PhoneNum20_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- CallBackFeedBackRouterInq-->
+	<xsd:complexType name="LegalCaseMngRqBody_Type">
+		<xsd:sequence>
+			<xsd:element name="CaseNumber" type="cmn:CaseNumber_Type"/>
+			<xsd:element name="CaseDate" type="arb:Timestamp_Type"/>
+			<xsd:element name="CaseDateHijri" type="cmn:CaseDateHijri_Type"/>
+			<xsd:element name="CaseNatureID" type="cmn:CaseNatureID_Type"/>
+			<xsd:element name="CaseTypeID" type="cmn:CaseTypeID_Type"/>
+			<xsd:element name="CourtTypeID" type="cmn:CourtTypeID_Type"/>
+			<xsd:element name="AnotherPartyName" type="cmn:AnotherPartyName_Type"/>
+			<xsd:element name="MessageBody" type="cmn:MessageBody_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- FraudCustCheck-->
+	<xsd:complexType name="FraudCustCheckRqBody_Type">
+		<xsd:sequence>			
+			<xsd:element name="IP"       	 type="arb:IPAddr_Type" minOccurs="0" />
+			<xsd:element name="MobileNumber" type="arb:UserMobile_Type"  minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FraudCustCheckRsBody_Type">
+		<xsd:sequence>			
+			<xsd:element name="FraudFlag"   type="arb:YNFlg_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- FraudCustCheck-->
+	<xsd:complexType name="CustWhitelistMngRqBody_Type">
+		<xsd:sequence>			
+			<xsd:element name="WhitelistFlg" type="arb:YNFlg_Type"/>			
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- CompanyNameUpdateRqBody -->
+	<xsd:complexType name="EBusinessCallbackMngRqBody_Type">
+		<xsd:sequence>
+			<xsd:element name="Event" type="arb:String_Type"/>
+			<xsd:element name="RequestParameters" type="cmn:RequestParametersLst_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- #####################Lists & Complex Elements Declarations#################### -->
+	<xsd:complexType name="LOVExtLst_Type">
+		<xsd:sequence>
+			<xsd:element name="LOVExtItem" type="cmn:LOVExtItem_Type" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="LOVExtItem_Type">
+		<xsd:sequence>
+			<xsd:element name="LOVCd1" type="cmn:LOVCd_Type" minOccurs="0"/>
+			<xsd:element name="LOVCd2" type="cmn:LOVCd_Type" minOccurs="0"/>
+			<xsd:element name="LOVCd3" type="cmn:LOVCd_Type" minOccurs="0"/>
+			<xsd:element name="LOVCd4" type="cmn:LOVCd_Type" minOccurs="0"/>
+			<xsd:element name="LOVCd5" type="cmn:LOVCd_Type" minOccurs="0"/>
+			<xsd:element name="LOVCd6" type="cmn:LOVCd_Type" minOccurs="0"/>
+			<xsd:element name="LOVCd7" type="cmn:LOVCd_Type" minOccurs="0"/>
+			<xsd:element name="LOVCd8" type="cmn:LOVCd_Type" minOccurs="0"/>
+			<xsd:element name="LOVCd9" type="cmn:LOVCd_Type" minOccurs="0"/>
+			<xsd:element name="LOVCd10" type="cmn:LOVCd_Type" minOccurs="0"/>
+			<xsd:element name="ItemDesc" type="arb:Desc100_Type" minOccurs="0"/>
+			<xsd:element name="ItemAttrib1" type="cmn:ItemAttrib_Type" minOccurs="0"/>
+			<xsd:element name="ItemAttrib2" type="cmn:ItemAttrib_Type" minOccurs="0"/>
+			<xsd:element name="ItemAttrib3" type="cmn:ItemAttrib_Type" minOccurs="0"/>
+			<xsd:element name="ItemAttrib4" type="cmn:ItemAttrib_Type" minOccurs="0"/>
+			<xsd:element name="ItemAttrib5" type="cmn:ItemAttrib_Type" minOccurs="0"/>
+			<xsd:element name="ItemAttrib6" type="cmn:ItemAttrib_Type" minOccurs="0"/>
+			<xsd:element name="ItemAttrib7" type="cmn:ItemAttrib_Type" minOccurs="0"/>
+			<xsd:element name="ItemAttrib8" type="cmn:ItemAttrib_Type" minOccurs="0"/>
+			<xsd:element name="ItemAttrib9" type="cmn:ItemAttrib_Type" minOccurs="0"/>
+			<xsd:element name="ItemAttrib10" type="cmn:ItemAttrib_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="LOVList_Type">
+		<xsd:sequence>
+			<xsd:element name="LOVItem" type="cmn:LOVItem_Type" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="LOVItem_Type">
+		<xsd:sequence>
+			<xsd:element name="LOVCd1" type="cmn:LOVCd_Type" minOccurs="0"/>
+			<xsd:element name="LOVCd2" type="cmn:LOVCd_Type" minOccurs="0"/>
+			<xsd:element name="LOVCd3" type="cmn:LOVCd_Type" minOccurs="0"/>
+			<xsd:element name="LOVCd4" type="cmn:LOVCd_Type" minOccurs="0"/>
+			<xsd:element name="ItemDesc" type="arb:Desc100_Type" minOccurs="0"/>
+			<xsd:element name="ItemAttrib1" type="cmn:ItemAttrib_Type" minOccurs="0"/>
+			<xsd:element name="ItemAttrib2" type="cmn:ItemAttrib_Type" minOccurs="0"/>
+			<xsd:element name="ItemAttrib3" type="cmn:ItemAttrib_Type" minOccurs="0"/>
+			<xsd:element name="ItemAttrib4" type="cmn:ItemAttrib_Type" minOccurs="0"/>
+			<xsd:element name="ItemAttrib5" type="cmn:ItemAttrib_Type" minOccurs="0"/>
+			<xsd:element name="ItemAttrib6" type="cmn:ItemAttrib_Type" minOccurs="0"/>
+			<xsd:element name="ItemAttrib7" type="cmn:ItemAttrib_Type" minOccurs="0"/>
+			<xsd:element name="ItemAttrib8" type="cmn:ItemAttrib_Type" minOccurs="0"/>
+			<xsd:element name="ItemAttrib9" type="cmn:ItemAttrib_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ReqAttribsList_Type">
+		<xsd:sequence>
+			<xsd:element name="ReqAttrib" type="cmn:ReqAttrib_Type" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FltrAttrib_Type">
+		<xsd:sequence>
+			<xsd:element name="Key" type="cmn:Key_Type"/>
+			<xsd:element name="Value" type="cmn:Value_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FltrAttribsList_Type">
+		<xsd:sequence>
+			<xsd:element name="FltrAttrib" type="cmn:FltrAttrib_Type" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ReturnedAttrib_Type">
+		<xsd:sequence>
+			<xsd:element name="Key" type="cmn:Key_Type"/>
+			<xsd:element name="Value" type="cmn:Value_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ReturnedAttribsList_Type">
+		<xsd:sequence>
+			<xsd:element name="ReturnedAttrib" type="cmn:ReturnedAttrib_Type" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ReturnedList_Type">
+		<xsd:sequence>
+			<xsd:element name="ReturnedAttribsList" type="cmn:ReturnedAttribsList_Type" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FileNetLst_Type">
+		<xsd:sequence>
+			<xsd:element name="FileNetLstItem" type="cmn:FileNetLstItem_Type" maxOccurs="30"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FileNetIDsLst_Type">
+		<xsd:sequence>
+			<xsd:element name="FileNetID" type="cmn:FileNetID_Type" maxOccurs="10"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FileNetDocsLst_Type">
+		<xsd:sequence>
+			<xsd:element name="FileNetDocsLstItem" type="cmn:FileNetDocsLstItem_Type" maxOccurs="10"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="MetaDataLst_Type">
+		<xsd:sequence>
+			<xsd:element name="MetaDataLstItem" type="cmn:MetaDataLstItem_Type" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="MetaDataMngLst_Type">
+		<xsd:sequence>
+			<xsd:element name="MetaDataLstItem" type="cmn:MetaDataLstItem_Type" maxOccurs="10"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="VATInfo_Type">
+		<xsd:sequence>
+			<xsd:element name="Amt" type="arb:CurrencyAmt_Type"/>
+			<xsd:element name="VATAmt" type="arb:CurrencyAmt_Type"/>
+			<xsd:element name="TotalAmt" type="arb:CurrencyAmt_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="BusinessServiceID_Type">
+		<xsd:sequence>
+			<xsd:element name="Key" type="cmn:Key_Type"/>
+			<xsd:element name="Value" type="cmn:Value_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Doc_Type">
+		<xsd:sequence>
+			<xsd:element name="FileName" type="cmn:FileName_Type"/>
+			<xsd:element name="FileContent" type="cmn:FileContent_Type"/>
+			<xsd:element name="MIME" type="cmn:MIME_Type"/>
+			<xsd:element name="FilePath" type="cmn:FilePath_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FileNetLstItem_Type">
+		<xsd:sequence>
+			<xsd:element name="FileNetID" type="cmn:FileNetID_Type"/>
+			<xsd:element name="MetaDataLst" type="cmn:MetaDataMngLst_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="MetaDataLstItem_Type">
+		<xsd:sequence>
+			<xsd:element name="PropertyName" type="cmn:Key_Type"/>
+			<xsd:element name="PropertyValue" type="cmn:Value_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FileNetDocsLstItem_Type">
+		<xsd:sequence>
+			<xsd:element name="FileNetID" type="cmn:FileNetID_Type"/>
+			<xsd:element name="FileName" type="cmn:FileName_Type"/>
+			<xsd:element name="MIME" type="cmn:MIME_Type" minOccurs="0"/>
+			<xsd:element name="FileSize" type="arb:Integer_Type" minOccurs="0"/>
+			<xsd:element name="FileContent" type="cmn:FileContent_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CustDtlsLst_Type">
+		<xsd:sequence>
+			<xsd:element name="CustProfileNum" type="arb:CICNum_Type" minOccurs="0"/>
+			<xsd:element name="CustTitle" type="cmn:CustTitle_Type" minOccurs="0"/>
+			<xsd:element name="CustFirstName" type="arb:FullName_Type" minOccurs="0"/>
+			<xsd:element name="CustLastName " type="arb:FullName_Type" minOccurs="0"/>
+			<xsd:element name="CustLang" type="arb:Lang_Type" minOccurs="0"/>
+			<xsd:element name="CustBirthDt" type="arb:Date_Type" minOccurs="0"/>
+			<xsd:element name="CalenderType" type="arb:HGFlg_Type" minOccurs="0"/>
+			<xsd:element name="CustIDType" type="arb:IDType_Type" minOccurs="0"/>
+			<xsd:element name="CustIDNum" type="arb:IDNum_Type" minOccurs="0"/>
+			<xsd:element name="CustIDIssuePlace" type="arb:City60_Type" minOccurs="0"/>
+			<xsd:element name="CustIDIssueDt" type="arb:Date_Type" minOccurs="0"/>
+			<xsd:element name="CustIDExpiryDt" type="arb:Date_Type" minOccurs="0"/>
+			<xsd:element name="CustAddress" type="arb:Address_Type" minOccurs="0"/>
+			<xsd:element name="CustCntry" type="arb:Code_Type" minOccurs="0"/>
+			<xsd:element name="CustCity" type="arb:CityCode_Type" minOccurs="0"/>
+			<xsd:element name="CustRegion" type="arb:Region_Type" minOccurs="0"/>
+			<xsd:element name="CustZipCd" type="arb:Zip_Type" minOccurs="0"/>
+			<xsd:element name="CustGender" type="arb:Gender_Type" minOccurs="0"/>
+			<xsd:element name="CustEmail" type="arb:UserEMail_Type" minOccurs="0"/>
+			<xsd:element name="CustLandlineNum" type="cmn:LandlineNum_Type" minOccurs="0"/>
+			<xsd:element name="CustMobileNum" type="arb:UserMobile_Type" minOccurs="0"/>
+			<xsd:element name="CustHomeNumNationalPrfx" type="cmn:NationalPrfxNum_Type" minOccurs="0"/>
+			<xsd:element name="CustHomeNum" type="cmn:HomeNum_Type" minOccurs="0"/>
+			<xsd:element name="CustHomeNumRegionalPrfx" type="cmn:RegionalPrfxNum_Type" minOccurs="0"/>
+			<xsd:element name="CustWorkNumNationalPrfx" type="cmn:NationalPrfxNum_Type" minOccurs="0"/>
+			<xsd:element name="CustWorkNum" type="cmn:WorkNum_Type" minOccurs="0"/>
+			<xsd:element name="CustWorkNumRegionalPrfx" type="cmn:RegionalPrfxNum_Type" minOccurs="0"/>
+			<xsd:element name="CustFaxNumNationalPrfx" type="cmn:NationalPrfxNum_Type" minOccurs="0"/>
+			<xsd:element name="CustFaxNum" type="cmn:FaxNum_Type" minOccurs="0"/>
+			<xsd:element name="CustFaxNumRegionalPrfx" type="cmn:RegionalPrfxNum_Type" minOccurs="0"/>
+			<xsd:element name="CustPOBOX" type="arb:POBox_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CustPropertyLst_Type">
+		<xsd:sequence>
+			<xsd:element name="CustPropertyLstItem" type="cmn:CustPropertyLstItem_Type" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CustPropertyLstItem_Type">
+		<xsd:sequence>
+			<xsd:element name="PropertyCd" type="cmn:PropertyCd_Type"/>
+			<xsd:element name="PropertyValue" type="cmn:PropertyValue_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="VatLst_Type">
+		<xsd:sequence>
+			<xsd:element name="VatLstItem" type="cmn:VatLstItem_Type" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="VatLstItem_Type">
+		<xsd:sequence>
+			<xsd:element name="VATCalculatedQrtr" type="arb:String_Type" minOccurs="0"/>
+			<xsd:element name="VATAmt" type="arb:Decimal_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="RequestParametersLst_Type">
+		<xsd:sequence>
+			<xsd:element name="RequestParametersLstItem" type="cmn:RequestParametersLstItem_Type" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="RequestParametersLstItem_Type">
+		<xsd:sequence>
+			<xsd:element name="key" type="arb:String_Type"/>
+			<xsd:element name="Value" type="arb:String_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- #####################Enumerations & Simple Elements Declarations#################### -->
+	<xsd:simpleType name="LOVCd_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">LOV code</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="arb:String_Type">
+			<xsd:maxLength value="500"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="LOVTyp_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">LOV Type</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="arb:String_Type">
+			<xsd:maxLength value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ItemAttrib_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">LOV Item Attribute</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="arb:String_Type">
+			<xsd:maxLength value="100"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ReqAttrib_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">Required Attribute Type</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="BaseUnit_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">Base Unit  Type</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="Key_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">Key Type</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="Value_Type">
+		<xsd:annotation>
+			<xsd:documentation source="DES">Value Type</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="ServiceType_Type">
+		<xsd:restriction base="arb:LookupID_Type">
+			<xsd:minLength value="2"/>
+			<xsd:maxLength value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="FileName_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="FileContent_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="DocumentSignature_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="MIME_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="FilePath_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="FileNetID_Type">
+		<xsd:restriction base="arb:SysGeneratedID_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="RefNum_Type">
+		<xsd:restriction base="arb:SysGeneratedID_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="DocType_Type">
+		<xsd:restriction base="arb:LookupID_Type">
+			<xsd:minLength value="1"/>
+			<xsd:maxLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PostalCode_Type">
+		<xsd:restriction base="arb:Code_Type">
+			<xsd:minLength value="5"/>
+			<xsd:maxLength value="5"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="FullName100_Type">
+		<xsd:restriction base="arb:FullName_Type">
+			<xsd:maxLength value="100"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Address100_Type">
+		<xsd:restriction base="arb:Address_Type">
+			<xsd:maxLength value="100"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="UserEMail100_Type">
+		<xsd:restriction base="arb:UserEMail_Type">
+			<xsd:maxLength value="100"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CustTitle_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="LandlineNum_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="HomeNum_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="WorkNum_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="FaxNum_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="RegionalPrfxNum_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="NationalPrfxNum_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="CustVIPFlg_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="CustVIPSegment_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="CustLoginDeviceID_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="CustLoginDeviceSeq_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="CustLastLogStatus_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="CustSMSUsrID_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="CustSMSStatus_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="PropertyCd_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="PropertyValue_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="FileNetObjStore_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="FileNetDocClass_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="TrxnOTPCode_Type">
+		<xsd:restriction base="arb:String_Type">
+			<xsd:maxLength value="3"/>
+			<xsd:minLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CustomerResponse_Type">
+		<xsd:restriction base="arb:String_Type">
+			<xsd:maxLength value="2"/>
+			<xsd:minLength value="2"/>
+		</xsd:restriction>
+		<!-- 
+		     LOV
+				'01': Accepted
+				
+				'02': Rejected
+			 -->
+	</xsd:simpleType>
+	<xsd:simpleType name="OTPType_Type">
+		<xsd:restriction base="arb:String_Type">
+			<xsd:enumeration value="NO_OTP"/>
+			<xsd:enumeration value="LOGIN_OTP"/>
+			<xsd:enumeration value="TRANS_OTP"/>
+			<xsd:enumeration value="FPT_OTP"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="KioskID_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="ServiceCode_Type">
+		<xsd:restriction base="arb:String_Type">
+			<xsd:maxLength value="18"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SalamaTokenSerial_Type">
+		<xsd:restriction base="arb:Integer_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="Param_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="CallBackPurpose_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="SignatureDirection_Type">
+		<xsd:restriction base="arb:String_Type">
+			<xsd:enumeration value="L"/>
+			<xsd:enumeration value="R"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CaseNumber_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="CaseDateHijri_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="CaseNatureID_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="CaseTypeID_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="CourtTypeID_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="AnotherPartyName_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="MessageBody_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="RiskFactor_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="SignedPage_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="Coordinates_Type">
+		<xsd:restriction base="arb:String_Type">
+			<xsd:enumeration value="TopLeft"/>
+			<xsd:enumeration value="TopMiddle"/>
+			<xsd:enumeration value="CentreLeft"/>
+			<xsd:enumeration value="CentreMiddle"/>
+			<xsd:enumeration value="CentreRight"/>
+			<xsd:enumeration value="BottomLeft"/>
+			<xsd:enumeration value="BottomMiddle"/>
+			<xsd:enumeration value="BottomRight"/>
+			<xsd:enumeration value="TopRight"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ContactNum_Type">
+		<xsd:restriction base="arb:UserMobile_Type">
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SignPgLvlCoordinates_Type">
+		<xsd:restriction base="arb:String_Type"/>
+	</xsd:simpleType>
+
+</xsd:schema>

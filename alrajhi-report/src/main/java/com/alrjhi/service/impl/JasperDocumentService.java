@@ -1,14 +1,15 @@
 package com.alrjhi.service.impl;
 
+import com.alrajhi.client.FileClient;
+import com.alrajhi.dto.request.DocumentRequest;
 import com.alrajhi.error.error.BusinessErrorCodes;
 import com.alrajhi.error.exception.BusinessRoleException;
+import com.alrajhi.model.enumerate.Language;
+import com.alrajhi.model.enumerate.ResponseType;
 import com.alrjhi.ReportApplication;
-import com.alrjhi.dto.request.DocumentRequest;
 import com.alrjhi.dto.response.DocumentResponse;
-import com.alrjhi.model.Language;
-import com.alrjhi.model.ReportEntity;
-import com.alrjhi.model.ResponseType;
-import com.alrjhi.repository.ReportRepository;
+import com.alrjhi.model.DocumentEntity;
+import com.alrjhi.repository.DocumentRepository;
 import com.alrjhi.service.DocumentService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -28,6 +29,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.Collection;
@@ -44,8 +46,9 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class JasperDocumentService implements DocumentService {
 
-    private final ReportRepository reportRepository;
+    private final DocumentRepository documentRepository;
     private final ObjectMapper mapper;
+    private final FileClient fileClient;
 
     /**
      * To generate document
@@ -55,7 +58,7 @@ public class JasperDocumentService implements DocumentService {
      * @throws JRException to throw Jasper exception.
      */
     @Override
-    public DocumentResponse generateReport(final DocumentRequest documentRequest) throws JRException, JsonProcessingException {
+    public DocumentResponse generateReport(final DocumentRequest documentRequest) throws JRException, JsonProcessingException, MalformedURLException {
 
         Map<String, Object> parameters = new HashMap<>();
         JasperReport report = null;
@@ -134,8 +137,8 @@ public class JasperDocumentService implements DocumentService {
                 new JREmptyDataSource() // Empty data source
         );
 
-        ReportEntity entity = reportRepository.saveAndFlush(
-                ReportEntity
+        DocumentEntity entity = documentRepository.saveAndFlush(
+                DocumentEntity
                         .builder()
                         .data(mapper.writeValueAsString(documentRequest))
                         .source((documentRequest.getSource()))
@@ -148,24 +151,20 @@ public class JasperDocumentService implements DocumentService {
         JasperExportManager.exportReportToPdfStream(jasperPrint, outputStream);
 
         // Encode to Base64
-        String base64 = Base64.getEncoder().encodeToString(outputStream.toByteArray());
+        String contentFile = Base64.getEncoder().encodeToString(outputStream.toByteArray());
 
         if (documentRequest.getResponseType().equals(ResponseType.FILE_ID)) {
 
             // call EBS
-            try {
-                Thread.sleep(3000); // sleep for 3000 milliseconds = 3 seconds
-            } catch (InterruptedException e) {
-                log.error(e);
-            }
 
             entity.setReferenceId(UUID.randomUUID().toString());
-            reportRepository.saveAndFlush(entity);
+            fileClient.uploadFile(documentRequest, contentFile);
+            documentRepository.saveAndFlush(entity);
 
             return DocumentResponse
                     .builder()
                     .id(entity.getId())
-                    .file(base64)
+                    .file(contentFile)
                     .source(documentRequest.getSource())
                     .letterType(documentRequest.getLetterType())
                     .reportLanguage(documentRequest.getReportLanguage())
@@ -175,7 +174,7 @@ public class JasperDocumentService implements DocumentService {
             return DocumentResponse
                     .builder()
                     .id(entity.getId())
-                    .file(base64)
+                    .file(contentFile)
                     .source(documentRequest.getSource())
                     .letterType(documentRequest.getLetterType())
                     .reportLanguage(documentRequest.getReportLanguage())

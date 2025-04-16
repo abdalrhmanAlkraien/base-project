@@ -1,8 +1,8 @@
 package com.alrjhi.controller;
 
 import com.alrajhi.constant.EndPoints;
+import com.alrajhi.dto.request.DocumentRequest;
 import com.alrajhi.util.GenericResponse;
-import com.alrjhi.dto.request.DocumentRequest;
 import com.alrjhi.dto.response.DocumentResponse;
 import com.alrjhi.service.DocumentService;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.net.MalformedURLException;
 
 /**
  * @author: Abd-alrhman Alkraien.
@@ -55,7 +57,7 @@ public class ReportController {
     @PostMapping
     public ResponseEntity<GenericResponse<DocumentResponse>> generateDocument(
             @RequestBody @Valid DocumentRequest report
-    ) throws JRException, JsonProcessingException {
+    ) throws JRException, JsonProcessingException, MalformedURLException {
 
         return ResponseEntity
                 .ok()

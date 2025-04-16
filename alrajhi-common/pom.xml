@@ -4,7 +4,6 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-
     <parent>
         <groupId>com.alrajhi</groupId>
         <artifactId>alrajhi-parent</artifactId>
@@ -16,16 +15,23 @@
     <packaging>pom</packaging>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-        <common.version>0.0.1-SNAPSHOT</common.version>
+        <revision>0.0.1-SNAPSHOT</revision>
+        <java-version>17</java-version>
+        <maven-deploy-version>3.1.0</maven-deploy-version>
     </properties>
 
     <!--keep this ordered-->
     <modules>
         <module>alrajhi-common-lib</module>
+        <module>alrajhi-soap-lib</module>
     </modules>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
     <repositories>
         <repository>
             <id>spring-milestones</id>
@@ -47,8 +53,17 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java-version}</source> <!-- or your Java version -->
+                    <target>${java-version}</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-deploy-plugin</artifactId>
-                <version>3.1.0</version>
+                <version>${maven-deploy-version}</version>
                 <executions>
                     <execution>
                         <goals>

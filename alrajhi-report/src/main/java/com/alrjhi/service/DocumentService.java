@@ -1,9 +1,11 @@
 package com.alrjhi.service;
 
-import com.alrjhi.dto.request.DocumentRequest;
+import com.alrajhi.dto.request.DocumentRequest;
 import com.alrjhi.dto.response.DocumentResponse;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import net.sf.jasperreports.engine.JRException;
+
+import java.net.MalformedURLException;
 
 /**
  * @author: Abd-alrhman Alkraien.
@@ -11,5 +13,5 @@ import net.sf.jasperreports.engine.JRException;
  * @Time: 10:47 PM
  */
 public interface DocumentService {
-    DocumentResponse generateReport(final DocumentRequest report) throws JRException, JsonProcessingException;
+    DocumentResponse generateReport(final DocumentRequest report) throws JRException, JsonProcessingException, MalformedURLException;
 }

@@ -1,0 +1,660 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:cmn="http://www.alrajhiwebservices.com/CommonUtilities" xmlns:ns="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CommonUtilities" targetNamespace="http://www.alrajhiwebservices.com/CommonUtilities">
+	<wsdl:documentation><wsdl:appinfo source="WMQI_APPINFO">
+	<MRWSDLAppInfo imported="true">
+		<binding hasEncoding="false" imported="true" name="CommonValidationInqBinding" originalBindingStyle="document"/>
+		<binding hasEncoding="false" imported="true" name="ValidatePostalCodeBinding" originalBindingStyle="document"/>
+		<binding hasEncoding="false" imported="true" name="VATCalculatorBinding" originalBindingStyle="document"/>
+		<binding hasEncoding="false" imported="true" name="CommonUtilitiesBinding" originalBindingStyle="document"/>
+		<binding hasEncoding="false" imported="true" name="LegalCaseMngBinding" originalBindingStyle="document"/>
+	    <binding hasEncoding="false" imported="true" name="LOVExtInqBinding" originalBindingStyle="document" />
+	</MRWSDLAppInfo>
+</wsdl:appinfo></wsdl:documentation>
+	<wsdl:types>
+		<xsd:schema>
+			<xsd:import namespace="http://www.alrajhiwebservices.com/CommonUtilities" schemaLocation="../XSD/CommonUtilities.xsd">
+			</xsd:import>
+		</xsd:schema>
+	</wsdl:types>
+	
+	<wsdl:message name="LOVExtInqRq">
+		<wsdl:part name="parameters" element="cmn:LOVExtInqRq"/>
+	</wsdl:message>
+	<wsdl:message name="LOVExtInqRs">
+		<wsdl:part name="parameters" element="cmn:LOVExtInqRs"/>
+	</wsdl:message>
+	
+	<wsdl:message name="LOVInqRq">
+		<wsdl:part name="parameters" element="cmn:LOVInqRq"/>
+	</wsdl:message>
+	<wsdl:message name="LOVInqRs">
+		<wsdl:part name="parameters" element="cmn:LOVInqRs"/>
+	</wsdl:message>
+	<wsdl:message name="GetAmtInWordsRq">
+		<wsdl:part name="parameters" element="cmn:GetAmtInWordsRq"/>
+	</wsdl:message>
+	<wsdl:message name="GetAmtInWordsRs">
+		<wsdl:part name="parameters" element="cmn:GetAmtInWordsRs"/>
+	</wsdl:message>
+	<wsdl:message name="VATCalculatorRq">
+		<wsdl:part name="parameters" element="cmn:VATCalculatorRq"/>
+	</wsdl:message>
+	<wsdl:message name="VATCalculatorRs">
+		<wsdl:part name="parameters" element="cmn:VATCalculatorRs"/>
+	</wsdl:message>
+	<wsdl:message name="CommonValidationInqRq">
+		<wsdl:part name="parameters" element="cmn:CommonValidationInqRq"/>
+	</wsdl:message>
+	<wsdl:message name="CommonValidationInqRs">
+		<wsdl:part name="parameters" element="cmn:CommonValidationInqRs"/>
+	</wsdl:message>
+	<wsdl:message name="ValidatePostalCodeRq">
+		<wsdl:part name="parameters" element="cmn:ValidatePostalCodeRq"/>
+	</wsdl:message>
+	<wsdl:message name="ValidatePostalCodeRs">
+		<wsdl:part name="parameters" element="cmn:ValidatePostalCodeRs"/>
+	</wsdl:message>
+	<wsdl:message name="CustProductEligibilityInqRq">
+		<wsdl:part name="parameters" element="cmn:CustProductEligibilityInqRq"/>
+	</wsdl:message>
+	<wsdl:message name="CustProductEligibilityInqRs">
+		<wsdl:part name="parameters" element="cmn:CustProductEligibilityInqRs"/>
+	</wsdl:message>
+	<wsdl:message name="FileNetUploadRq">
+		<wsdl:part name="parameters" element="cmn:FileNetUploadRq"/>
+	</wsdl:message>
+	<wsdl:message name="FileNetUploadRs">
+		<wsdl:part name="parameters" element="cmn:FileNetUploadRs"/>
+	</wsdl:message>
+	<wsdl:message name="FileNetDownloadRq">
+		<wsdl:part name="parameters" element="cmn:FileNetDownloadRq"/>
+	</wsdl:message>
+	<wsdl:message name="FileNetDownloadRs">
+		<wsdl:part name="parameters" element="cmn:FileNetDownloadRs"/>
+	</wsdl:message>
+	<wsdl:message name="FileNetDeleteRq">
+		<wsdl:part name="parameters" element="cmn:FileNetDeleteRq"/>
+	</wsdl:message>
+	<wsdl:message name="FileNetDeleteRs">
+		<wsdl:part name="parameters" element="cmn:FileNetDeleteRs"/>
+	</wsdl:message>
+	<wsdl:message name="FileNetDocMngRq">
+		<wsdl:part name="parameters" element="cmn:FileNetDocMngRq"/>
+	</wsdl:message>
+	<wsdl:message name="FileNetDocMngRs">
+		<wsdl:part name="parameters" element="cmn:FileNetDocMngRs"/>
+	</wsdl:message>
+	<wsdl:message name="KioskAvailabilityInqRq">
+		<wsdl:part name="parameters" element="cmn:KioskAvailabilityInqRq"/>
+	</wsdl:message>
+	<wsdl:message name="KioskAvailabilityInqRs">
+		<wsdl:part name="parameters" element="cmn:KioskAvailabilityInqRs"/>
+	</wsdl:message>
+	<wsdl:message name="IVRCallbackMngRq">
+		<wsdl:part element="cmn:IVRCallbackMngRq" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IVRCallbackMngRs">
+		<wsdl:part element="cmn:IVRCallbackMngRs" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="CallBackFeedBackMngRq">
+		<wsdl:part element="cmn:CallBackFeedBackMngRq" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="CallBackFeedBackMngRs">
+		<wsdl:part element="cmn:CallBackFeedBackMngRs" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="CallBackFeedBackInqRq">
+		<wsdl:part element="cmn:CallBackFeedBackInqRq" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="CallBackFeedBackInqRs">
+		<wsdl:part element="cmn:CallBackFeedBackInqRs" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="SignDocRq">
+		<wsdl:part name="parameters" element="cmn:SignDocRq"/>
+	</wsdl:message>
+	<wsdl:message name="SignDocRs">
+		<wsdl:part name="parameters" element="cmn:SignDocRs"/>
+	</wsdl:message>
+	<wsdl:message name="FeeValueInqRq">
+		<wsdl:part element="cmn:FeeValueInqRq" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="FeeValueInqRs">
+		<wsdl:part element="cmn:FeeValueInqRs" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="PersonalCallbackRq">
+		<wsdl:part element="cmn:PersonalCallbackRq" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="PersonalCallbackRs">
+		<wsdl:part element="cmn:PersonalCallbackRs" name="parameters"/>
+	</wsdl:message>
+	
+	<wsdl:message name="LegalCaseMngRq">
+		<wsdl:part name="parameters" element="cmn:LegalCaseMngRq"/>
+	</wsdl:message>
+	<wsdl:message name="LegalCaseMngRs">
+		<wsdl:part name="parameters" element="cmn:LegalCaseMngRs"/>
+	</wsdl:message>
+	<wsdl:message name="EBusinessCallbackMngRq">
+		<wsdl:part element="cmn:EBusinessCallbackMngRq" name="EBusinessCallbackMngRq"/>
+	</wsdl:message>
+	<wsdl:message name="EBusinessCallbackMngRs">
+		<wsdl:part element="cmn:EBusinessCallbackMngRs" name="EBusinessCallbackMngRs"/>
+	</wsdl:message>
+	<wsdl:message name="CustWhitelistMngRq">
+		<wsdl:part name="parameters" element="cmn:CustWhitelistMngRq"/>
+	</wsdl:message>
+	<wsdl:message name="CustWhitelistMngRs">
+		<wsdl:part name="parameters" element="cmn:CustWhitelistMngRs"/>
+	</wsdl:message>
+	
+	<wsdl:portType name="LOVExtInqService">
+		<wsdl:operation
+			name="LOVExtInqOperation">
+			<wsdl:input name="LOVExtInqRq"
+				message="cmn:LOVExtInqRq" />
+			<wsdl:output name="LOVExtInqRs"
+				message="cmn:LOVExtInqRs" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:message name="FraudCustCheckRq">
+		<wsdl:part name="parameters" element="cmn:FraudCustCheckRq"/>
+	</wsdl:message>
+	<wsdl:message name="FraudCustCheckRs">
+		<wsdl:part name="parameters" element="cmn:FraudCustCheckRs"/>
+	</wsdl:message>
+
+	
+	<wsdl:portType name="CommonUtilitiesService">
+		<wsdl:operation name="LOVInqOperation">
+			<wsdl:input name="LOVInqRq" message="cmn:LOVInqRq"/>
+			<wsdl:output name="LOVInqRs" message="cmn:LOVInqRs"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetAmtInWordsOperation">
+			<wsdl:input name="GetAmtInWordsRq" message="cmn:GetAmtInWordsRq"/>
+			<wsdl:output name="GetAmtInWordsRs" message="cmn:GetAmtInWordsRs"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="LegalCaseMngService">
+		<wsdl:operation name="LegalCaseMngOperation">
+			<wsdl:input name="LegalCaseMngRq" message="cmn:LegalCaseMngRq"/>
+			<wsdl:output name="LegalCaseMngRs" message="cmn:LegalCaseMngRs"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="CustWhitelistMngService">
+		<wsdl:operation name="CustWhitelistMngOperation">
+			<wsdl:input name="CustWhitelistMngRq" message="cmn:CustWhitelistMngRq"/>
+			<wsdl:output name="CustWhitelistMngRs" message="cmn:CustWhitelistMngRs"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	
+	<wsdl:portType name="ValidatePostalCodeService">
+		<wsdl:operation name="ValidatePostalCodeOperation">
+			<wsdl:input name="ValidatePostalCodeRq" message="cmn:ValidatePostalCodeRq"/>
+			<wsdl:output name="ValidatePostalCodeRs" message="cmn:ValidatePostalCodeRs"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="VATCalculatorService">
+		<wsdl:operation name="VATCalculatorOperation">
+			<wsdl:input name="VATCalculatorRq" message="cmn:VATCalculatorRq"/>
+			<wsdl:output name="VATCalculatorRs" message="cmn:VATCalculatorRs"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="CommonValidationInqService">
+		<wsdl:operation name="CommonValidationInqOperation">
+			<wsdl:input name="CommonValidationInqRq" message="cmn:CommonValidationInqRq"/>
+			<wsdl:output name="CommonValidationInqRs" message="cmn:CommonValidationInqRs"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="CustProductEligibilityInqService">
+		<wsdl:operation name="CustProductEligibilityInqOperation">
+			<wsdl:input name="CustProductEligibilityInqRq" message="cmn:CustProductEligibilityInqRq"/>
+			<wsdl:output name="CustProductEligibilityInqRs" message="cmn:CustProductEligibilityInqRs"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="FileNetUploadService">
+		<wsdl:operation name="FileNetUploadOperation">
+			<wsdl:input name="FileNetUploadRq" message="cmn:FileNetUploadRq"/>
+			<wsdl:output name="FileNetUploadRs" message="cmn:FileNetUploadRs"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="FileNetDownloadService">
+		<wsdl:operation name="FileNetDownloadOperation">
+			<wsdl:input name="FileNetDownloadRq" message="cmn:FileNetDownloadRq"/>
+			<wsdl:output name="FileNetDownloadRs" message="cmn:FileNetDownloadRs"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="FileNetDeleteService">
+		<wsdl:operation name="FileNetDeleteOperation">
+			<wsdl:input name="FileNetDeleteRq" message="cmn:FileNetDeleteRq"/>
+			<wsdl:output name="FileNetDeleteRs" message="cmn:FileNetDeleteRs"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="FileNetDocMngService">
+		<wsdl:operation name="FileNetDocMngOperation">
+			<wsdl:input name="FileNetDocMngRq" message="cmn:FileNetDocMngRq"/>
+			<wsdl:output name="FileNetDocMngRs" message="cmn:FileNetDocMngRs"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="KioskAvailabilityInqService">
+		<wsdl:operation name="KioskAvailabilityInqOperation">
+			<wsdl:input name="KioskAvailabilityInqRq" message="cmn:KioskAvailabilityInqRq"/>
+			<wsdl:output name="KioskAvailabilityInqRs" message="cmn:KioskAvailabilityInqRs"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="IVRCallbackMngPort">
+		<wsdl:operation name="IVRCallbackMngOperation">
+			<wsdl:input message="cmn:IVRCallbackMngRq" name="IVRCallbackMngRq"/>
+			<wsdl:output message="cmn:IVRCallbackMngRs" name="IVRCallbackMngRs"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="CallBackFeedBackMngPort">
+		<wsdl:operation name="CallBackFeedBackMngOperation">
+			<wsdl:input message="cmn:CallBackFeedBackMngRq" name="CallBackFeedBackMngRq"/>
+			<wsdl:output message="cmn:CallBackFeedBackMngRs" name="CallBackFeedBackMngRs"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="CallBackFeedBackInqPort">
+		<wsdl:operation name="CallBackFeedBackInqOperation">
+			<wsdl:input message="cmn:CallBackFeedBackInqRq" name="CallBackFeedBackInqRq"/>
+			<wsdl:output message="cmn:CallBackFeedBackInqRs" name="CallBackFeedBackInqRs"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="SignDocService">
+		<wsdl:operation name="SignDocOperation">
+			<wsdl:input name="SignDocRq" message="cmn:SignDocRq"/>
+			<wsdl:output name="SignDocRs" message="cmn:SignDocRs"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="FeeValueInqPort">
+		<wsdl:operation name="FeeValueInqOperation">
+			<wsdl:input message="cmn:FeeValueInqRq" name="FeeValueInqRq"/>
+			<wsdl:output message="cmn:FeeValueInqRs" name="FeeValueInqRs"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="PersonalCallbackPort">
+		<wsdl:operation name="PersonalCallbackOperation">
+			<wsdl:input message="cmn:PersonalCallbackRq" name="PersonalCallbackRq"/>
+			<wsdl:output message="cmn:PersonalCallbackRs" name="PersonalCallbackRs"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="FraudCustCheckService">
+		<wsdl:operation name="FraudCustCheckOperation">
+			<wsdl:input name="FraudCustCheckRq" message="cmn:FraudCustCheckRq"/>
+			<wsdl:output name="FraudCustCheckRs" message="cmn:FraudCustCheckRs"/>
+		</wsdl:operation>
+	</wsdl:portType>
+			<wsdl:portType name="EBusinessCallbackMng">
+		<wsdl:operation name="EBusinessCallbackMngOperation">
+			<wsdl:input message="cmn:EBusinessCallbackMngRq"/>
+			<wsdl:output message="cmn:EBusinessCallbackMngRs"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="LOVExtInqBinding" type="cmn:LOVExtInqService">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="LOVExtInqOperation">
+			<soap:operation soapAction="LOVExtInqAction" style="document"/>
+			<wsdl:input name="LOVExtInqRq">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="LOVExtInqRs">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	
+	<wsdl:binding name="CommonUtilitiesBinding" type="cmn:CommonUtilitiesService">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="LOVInqOperation">
+			<soap:operation soapAction="LOVInqAction" style="document"/>
+			<wsdl:input name="LOVInqRq">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="LOVInqRs">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetAmtInWordsOperation">
+			<soap:operation soapAction="GetAmtInWordsAction" style="document"/>
+			<wsdl:input name="GetAmtInWordsRq">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="GetAmtInWordsRs">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="LegalCaseMngBinding" type="cmn:LegalCaseMngService">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="LegalCaseMngOperation">
+			<soap:operation soapAction="LegalCaseMngAction" style="document"/>
+			<wsdl:input name="LegalCaseMngRq">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="LegalCaseMngRs">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="CustWhitelistMngBinding" type="cmn:CustWhitelistMngService">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="CustWhitelistMngOperation">
+			<soap:operation soapAction="CustWhitelistMngAction" style="document"/>
+			<wsdl:input name="CustWhitelistMngRq">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="CustWhitelistMngRs">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="VATCalculatorBinding" type="cmn:VATCalculatorService">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="VATCalculatorOperation">
+			<soap:operation soapAction="VATCalculatorAction" style="document"/>
+			<wsdl:input name="VATCalculatorRq">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="VATCalculatorRs">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="CommonValidationInqBinding" type="cmn:CommonValidationInqService">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="CommonValidationInqOperation">
+			<soap:operation soapAction="CommonValidationInqAction" style="document"/>
+			<wsdl:input name="CommonValidationInqRq">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="CommonValidationInqRs">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="ValidatePostalCodeBinding" type="cmn:ValidatePostalCodeService">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="ValidatePostalCodeOperation">
+			<soap:operation soapAction="ValidatePostalCodeAction" style="document"/>
+			<wsdl:input name="ValidatePostalCodeRq">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="ValidatePostalCodeRs">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="CustProductEligibilityInqBinding" type="cmn:CustProductEligibilityInqService">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="CustProductEligibilityInqOperation">
+			<soap:operation soapAction="CustProductEligibilityInqAction" style="document"/>
+			<wsdl:input name="CustProductEligibilityInqRq">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="CustProductEligibilityInqRs">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="FileNetUploadBinding" type="cmn:FileNetUploadService">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="FileNetUploadOperation">
+			<soap:operation soapAction="FileNetUploadAction" style="document"/>
+			<wsdl:input name="FileNetUploadRq">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="FileNetUploadRs">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="FileNetDownloadBinding" type="cmn:FileNetDownloadService">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="FileNetDownloadOperation">
+			<soap:operation soapAction="FileNetDownloadAction" style="document"/>
+			<wsdl:input name="FileNetDownloadRq">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="FileNetDownloadRs">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="FileNetDeleteBinding" type="cmn:FileNetDeleteService">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="FileNetDeleteOperation">
+			<soap:operation soapAction="FileNetDeleteAction" style="document"/>
+			<wsdl:input name="FileNetDeleteRq">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="FileNetDeleteRs">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="FileNetDocMngBinding" type="cmn:FileNetDocMngService">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="FileNetDocMngOperation">
+			<soap:operation soapAction="FileNetDocMngAction" style="document"/>
+			<wsdl:input name="FileNetDocMngRq">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="FileNetDocMngRs">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="KioskAvailabilityInqBinding" type="cmn:KioskAvailabilityInqService">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="KioskAvailabilityInqOperation">
+			<soap:operation soapAction="KioskAvailabilityInqAction" style="document"/>
+			<wsdl:input name="KioskAvailabilityInqRq">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="KioskAvailabilityInqRs">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="IVRCallbackMngBinding" type="cmn:IVRCallbackMngPort">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="IVRCallbackMngOperation">
+			<soap:operation soapAction="IVRCallbackMngAction" style="document"/>
+			<wsdl:input name="IVRCallbackMngRq">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="IVRCallbackMngRs">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="CallBackFeedBackMngBinding" type="cmn:CallBackFeedBackMngPort">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="CallBackFeedBackMngOperation">
+			<soap:operation soapAction="CallBackFeedBackMngAction" style="document"/>
+			<wsdl:input name="CallBackFeedBackMngRq">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="CallBackFeedBackMngRs">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="CallBackFeedBackInqBinding" type="cmn:CallBackFeedBackInqPort">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="CallBackFeedBackInqOperation">
+			<soap:operation soapAction="CallBackFeedBackInqAction" style="document"/>
+			<wsdl:input name="CallBackFeedBackInqRq">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="CallBackFeedBackInqRs">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="SignDocBinding" type="cmn:SignDocService">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="SignDocOperation">
+			<soap:operation soapAction="SignDocAction" style="document"/>
+			<wsdl:input name="SignDocRq">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="SignDocRs">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="FeeValueInqBinding" type="cmn:FeeValueInqPort">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="FeeValueInqOperation">
+			<soap:operation soapAction="FeeValueInqAction" style="document"/>
+			<wsdl:input name="FeeValueInqRq">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="FeeValueInqRs">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="PersonalCallbackBinding" type="cmn:PersonalCallbackPort">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="PersonalCallbackOperation">
+			<soap:operation soapAction="PersonalCallbackAction" style="document"/>
+			<wsdl:input name="PersonalCallbackRq">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="PersonalCallbackRs">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="FraudCustCheckBinding" type="cmn:FraudCustCheckService">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="FraudCustCheckOperation">
+			<soap:operation soapAction="FraudCustCheckAction" style="document"/>
+			<wsdl:input name="FraudCustCheckRq">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="FraudCustCheckRs">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+			<wsdl:binding name="EBusinessCallbackMngBinding" type="cmn:EBusinessCallbackMng">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="EBusinessCallbackMngOperation">
+			<soap:operation soapAction="EBusinessCallbackMngAction" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="CommonUtilities">
+		<wsdl:port name="CommonUtilitiesPort" binding="cmn:CommonUtilitiesBinding">
+			<soap:address location="http://10.11.34.16:7869/CommonUtilities"/>
+		</wsdl:port>
+	</wsdl:service>
+	
+	<wsdl:service name="LOVExtInq">
+		<wsdl:port name="LOVExtInqPort" binding="cmn:LOVExtInqBinding">
+			<soap:address location="http://10.11.34.16:7869/CommonUtilities/LOVExtInq"/>
+		</wsdl:port>
+	</wsdl:service>
+	
+	<wsdl:service name="VATCalculator">
+		<wsdl:port name="VATCalculatorPort" binding="cmn:VATCalculatorBinding">
+			<soap:address location="http://10.11.34.16:7869/CommonUtilities/VATCalculator"/>
+		</wsdl:port>
+	</wsdl:service>
+	<wsdl:service name="CommonValidationInq">
+		<wsdl:port name="CommonValidationInqPort" binding="cmn:CommonValidationInqBinding">
+			<soap:address location="http://10.11.34.16:7869/CommonUtilities/CommonValidationInq"/>
+		</wsdl:port>
+	</wsdl:service>
+	<wsdl:service name="ValidatePostalCode">
+		<wsdl:port name="ValidatePostalCodePort" binding="cmn:ValidatePostalCodeBinding">
+			<soap:address location="http://10.11.34.16:7869/CommonUtilities/ValidatePostalCode"/>
+		</wsdl:port>
+	</wsdl:service>
+	<wsdl:service name="CustProductEligibilityInq">
+		<wsdl:port name="CustProductEligibilityInqPort" binding="cmn:CustProductEligibilityInqBinding">
+			<soap:address location="http://10.11.34.16:7869/CommonUtilities/CustProductEligibilityInq"/>
+		</wsdl:port>
+	</wsdl:service>
+	<wsdl:service name="FileNetUpload">
+		<wsdl:port name="FileNetUploadPort" binding="cmn:FileNetUploadBinding">
+			<soap:address location="http://10.11.34.16:7869/CommonUtilities/FileNetUpload"/>
+		</wsdl:port>
+	</wsdl:service>
+	<wsdl:service name="FileNetDownload">
+		<wsdl:port name="FileNetDownloadPort" binding="cmn:FileNetDownloadBinding">
+			<soap:address location="http://10.11.34.16:7869/CommonUtilities/FileNetDownload"/>
+		</wsdl:port>
+	</wsdl:service>
+	<wsdl:service name="FileNetDelete">
+		<wsdl:port name="FileNetDeletePort" binding="cmn:FileNetDeleteBinding">
+			<soap:address location="http://10.11.34.16:7869/CommonUtilities/FileNetDelete"/>
+		</wsdl:port>
+	</wsdl:service>
+	<wsdl:service name="FileNetDocMng">
+		<wsdl:port name="FileNetDocMngPort" binding="cmn:FileNetDocMngBinding">
+			<soap:address location="http://10.11.34.16:7869/CommonUtilities/FileNetDocMng"/>
+		</wsdl:port>
+	</wsdl:service>
+	<wsdl:service name="KioskAvailabilityInq">
+		<wsdl:port name="KioskAvailabilityInqPort" binding="cmn:KioskAvailabilityInqBinding">
+			<soap:address location="http://10.11.34.16:7869/CommonUtilities/KioskAvailabilityInq"/>
+		</wsdl:port>
+	</wsdl:service>
+	<wsdl:service name="IVRCallbackMng">
+		<wsdl:port binding="cmn:IVRCallbackMngBinding" name="IVRCallbackMngPort">
+			<soap:address location="http://10.11.34.16:7869/CommonUtilities/IVRCallbackMng"/>
+		</wsdl:port>
+	</wsdl:service>
+	<wsdl:service name="CallBackFeedBackMng">
+		<wsdl:port binding="cmn:CallBackFeedBackMngBinding" name="CallBackFeedBackMngPort">
+			<soap:address location="http://10.11.34.16:7869/CommonUtilities/CallBackFeedBackMng"/>
+		</wsdl:port>
+	</wsdl:service>
+	<wsdl:service name="CallBackFeedBackInq">
+		<wsdl:port binding="cmn:CallBackFeedBackInqBinding" name="CallBackFeedBackInqPort">
+			<soap:address location="http://10.11.34.16:7869/CommonUtilities/CallBackFeedBackInq"/>
+		</wsdl:port>
+	</wsdl:service>
+	<wsdl:service name="SignDoc">
+		<wsdl:port name="SignDocPort" binding="cmn:SignDocBinding">
+			<soap:address location="http://10.11.34.16:7869/CommonUtilities/SignDoc"/>
+		</wsdl:port>
+	</wsdl:service>
+	<wsdl:service name="FeeValueInq">
+		<wsdl:port binding="cmn:FeeValueInqBinding" name="FeeValueInqPort">
+			<soap:address location="http://10.11.34.16:7869/CommonUtilities/FeeValueInq"/>
+		</wsdl:port>
+	</wsdl:service>
+	<wsdl:service name="PersonalCallback">
+		<wsdl:port binding="cmn:PersonalCallbackBinding" name="PersonalCallbackPort">
+			<soap:address location="https://personalcallback-01-https-sit.apps.ocp.nonprod.alrajhi.bank/CommonUtilities/PersonalCallback"/>
+		</wsdl:port>
+	</wsdl:service>
+	<wsdl:service name="LegalCaseMng">
+		<wsdl:port binding="cmn:LegalCaseMngBinding" name="LegalCaseMngPort">
+			<soap:address location="http://10.11.34.16:7869/CommonUtilities/LegalCaseMng"/>
+		</wsdl:port>
+	</wsdl:service>
+	<wsdl:service name="CustWhitelistMng">
+		<wsdl:port binding="cmn:CustWhitelistMngBinding" name="CustWhitelistMngPort">
+			<soap:address location="http://10.11.34.16:7869/CommonUtilities/CustWhitelistMng"/>
+		</wsdl:port>
+	</wsdl:service>
+	<wsdl:service name="FraudCustCheck">
+		<wsdl:port name="FraudCustCheckPort" binding="cmn:FraudCustCheckBinding">
+			<soap:address location="http://10.11.34.16:7869/CommonUtilities/FraudCustCheck"/>
+		</wsdl:port>
+	</wsdl:service>
+			<wsdl:service name="EBusinessCallbackMngService">
+		<wsdl:port binding="cmn:EBusinessCallbackMngBinding" name="EBusinessCallbackMng">
+			<soap:address location="http://10.11.34.16:7886/CommonUtilities/EBusinessCallbackMng"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

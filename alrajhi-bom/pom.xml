@@ -8,7 +8,7 @@
     <groupId>com.alrajhi</groupId>
     <artifactId>alrajhi-bom</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${revision}</version>
     <name>Alrajhi Bill of Materials project</name>
 
 
@@ -19,6 +19,10 @@
         <mysql-version>8.2.0</mysql-version>
         <webflux-ui-version>2.8.5</webflux-ui-version>
         <webmvc-ui-version>2.0.2</webmvc-ui-version>
+        <map-struct-version>1.5.5.Final</map-struct-version>
+        <openpdf-version>1.3.30</openpdf-version>
+        <spring-boot-security-version>3.4.5</spring-boot-security-version>
+        <maven-deploy-version>3.1.0</maven-deploy-version>
     </properties>
 
 
@@ -40,12 +44,18 @@
            <dependency>
                <groupId>org.mapstruct</groupId>
                <artifactId>mapstruct</artifactId>
-               <version>1.5.5.Final</version>
+               <version>${map-struct-version}</version>
            </dependency>
 
            <dependency>
                <groupId>com.alrajhi</groupId>
                <artifactId>alrajhi-common-lib</artifactId>
+               <version>${revision}</version>
+           </dependency>
+
+           <dependency>
+               <groupId>com.alrajhi</groupId>
+               <artifactId>alrajhi-soap-lib</artifactId>
                <version>${revision}</version>
            </dependency>
 
@@ -114,13 +124,13 @@
            <dependency>
                <groupId>com.github.librepdf</groupId>
                <artifactId>openpdf</artifactId>
-               <version>1.3.30</version>
+               <version>${openpdf-version}</version>
            </dependency>
 
            <dependency>
                <groupId>org.springframework.boot</groupId>
                <artifactId>spring-boot-starter-security</artifactId>
-               <version>3.4.5</version> <!-- or latest available -->
+               <version>${spring-boot-security-version}</version> <!-- or latest available -->
            </dependency>
 
        </dependencies>
@@ -148,7 +158,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-deploy-plugin</artifactId>
-                <version>3.1.0</version>
+                <version>${maven-deploy-version}</version>
                 <executions>
                     <execution>
                         <goals>

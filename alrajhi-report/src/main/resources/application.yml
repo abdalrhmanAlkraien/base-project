@@ -21,6 +21,7 @@ management:
       exposure:
         include: '*'
 
+
   metrics:
     enable:
       all: true

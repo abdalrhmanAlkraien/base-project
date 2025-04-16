@@ -1,8 +1,8 @@
 package com.alrjhi.dto.response;
 
-import com.alrjhi.model.Language;
-import com.alrjhi.model.LetterType;
-import com.alrjhi.model.Source;
+import com.alrajhi.model.enumerate.Language;
+import com.alrajhi.model.enumerate.LetterType;
+import com.alrajhi.model.enumerate.Source;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

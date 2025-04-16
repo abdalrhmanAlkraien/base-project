@@ -1,9 +1,9 @@
-package com.alrjhi.model;
+package com.alrajhi.model.enumerate;
 
 /**
  * @author: Abd-alrhman Alkraien.
- * @Date: 4/13/2025
- * @Time: 11:51 AM
+ * @Date: 4/15/2025
+ * @Time: 3:31 PM
  */
 public enum Source {
 
