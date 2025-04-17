@@ -7,6 +7,7 @@ import com.alrajhi.model.enumerate.Source;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Map;
 
@@ -17,7 +18,7 @@ import java.util.Map;
  */
 @Data
 @AllArgsConstructor
-@NotNull
+@NoArgsConstructor
 public class DocumentRequest {
 
 

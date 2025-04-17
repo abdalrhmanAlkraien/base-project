@@ -29,7 +29,10 @@ management:
     metrics:
       export:
         enabled: true
-spring:
+#spring:
+#  web:
+#    resources:
+#      add-mappings: false
   profiles:
     active: dev
   application:
@@ -44,3 +47,4 @@ logging:
   level:
     root: INFO
     org.springframework: WARN  # Less detailed logging for Spring
+

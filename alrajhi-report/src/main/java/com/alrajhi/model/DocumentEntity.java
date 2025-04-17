@@ -1,6 +1,5 @@
-package com.alrjhi.model;
+package com.alrajhi.model;
 
-import com.alrajhi.model.AbstractEntity;
 import com.alrajhi.model.enumerate.Language;
 import com.alrajhi.model.enumerate.LetterType;
 import com.alrajhi.model.enumerate.ResponseType;

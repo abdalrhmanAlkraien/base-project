@@ -1,4 +1,4 @@
-package com.alrjhi.dto.response;
+package com.alrajhi.dto.response;
 
 import com.alrajhi.model.enumerate.Language;
 import com.alrajhi.model.enumerate.LetterType;

@@ -1,4 +1,4 @@
-package com.alrjhi.service.impl;
+package com.alrajhi.service.impl;
 
 import com.alrajhi.client.FileClient;
 import com.alrajhi.dto.request.DocumentRequest;
@@ -6,11 +6,11 @@ import com.alrajhi.error.error.BusinessErrorCodes;
 import com.alrajhi.error.exception.BusinessRoleException;
 import com.alrajhi.model.enumerate.Language;
 import com.alrajhi.model.enumerate.ResponseType;
-import com.alrjhi.ReportApplication;
-import com.alrjhi.dto.response.DocumentResponse;
-import com.alrjhi.model.DocumentEntity;
-import com.alrjhi.repository.DocumentRepository;
-import com.alrjhi.service.DocumentService;
+import com.alrajhi.ReportApplication;
+import com.alrajhi.dto.response.DocumentResponse;
+import com.alrajhi.model.DocumentEntity;
+import com.alrajhi.repository.DocumentRepository;
+import com.alrajhi.service.DocumentService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -156,9 +156,8 @@ public class JasperDocumentService implements DocumentService {
         if (documentRequest.getResponseType().equals(ResponseType.FILE_ID)) {
 
             // call EBS
-
-            entity.setReferenceId(UUID.randomUUID().toString());
-            fileClient.uploadFile(documentRequest, contentFile);
+            contentFile = fileClient.uploadFile(documentRequest, contentFile);
+            entity.setReferenceId(contentFile);
             documentRepository.saveAndFlush(entity);
 
             return DocumentResponse
@@ -170,6 +169,9 @@ public class JasperDocumentService implements DocumentService {
                     .reportLanguage(documentRequest.getReportLanguage())
                     .build();
         } else {
+
+            entity.setReferenceId(UUID.randomUUID().toString());
+            documentRepository.saveAndFlush(entity);
 
             return DocumentResponse
                     .builder()

@@ -1,7 +1,6 @@
-package com.alrjhi.repository;
+package com.alrajhi.repository;
 
-import com.alrajhi.repository.ApplicationRepository;
-import com.alrjhi.model.DocumentEntity;
+import com.alrajhi.model.DocumentEntity;
 import org.springframework.stereotype.Repository;
 
 /**

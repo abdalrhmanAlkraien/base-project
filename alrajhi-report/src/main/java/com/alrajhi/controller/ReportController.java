@@ -1,10 +1,9 @@
-package com.alrjhi.controller;
+package com.alrajhi.controller;
 
 import com.alrajhi.constant.EndPoints;
 import com.alrajhi.dto.request.DocumentRequest;
-import com.alrajhi.util.GenericResponse;
-import com.alrjhi.dto.response.DocumentResponse;
-import com.alrjhi.service.DocumentService;
+import com.alrajhi.dto.response.DocumentResponse;
+import com.alrajhi.service.DocumentService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -36,7 +35,7 @@ public class ReportController {
 
     private final DocumentService documentService;
 
-    @Operation(summary = "create a new API to generate report")
+    @Operation(summary = "create a new API to generate document")
     @ApiResponses(value = {
 
             @ApiResponse(responseCode = "200", content = {
@@ -54,13 +53,13 @@ public class ReportController {
                     @Content
             }, description = "Not Found")
     })
-    @PostMapping
-    public ResponseEntity<GenericResponse<DocumentResponse>> generateDocument(
+    @PostMapping("/")
+    public ResponseEntity<DocumentResponse> generateDocument(
             @RequestBody @Valid DocumentRequest report
     ) throws JRException, JsonProcessingException, MalformedURLException {
 
         return ResponseEntity
                 .ok()
-                .body(GenericResponse.success(documentService.generateReport(report)));
+                .body(documentService.generateReport(report));
     }
 }

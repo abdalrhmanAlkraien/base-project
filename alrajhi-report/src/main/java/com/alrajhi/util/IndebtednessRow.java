@@ -1,4 +1,4 @@
-package com.alrjhi.util;
+package com.alrajhi.util;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

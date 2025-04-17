@@ -5,6 +5,7 @@ import com.alrajhi.constant.FileClientConstant;
 import com.alrajhi.dto.request.DocumentRequest;
 import com.alrajhi.until.SoapUtil;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
 import java.net.MalformedURLException;
@@ -18,19 +19,24 @@ import java.util.UUID;
  */
 @Service
 @RequiredArgsConstructor
+@Log4j2
 public class FileClient {
 
     private final UrlConfig urlConfig;
 
-    public void uploadFile(final DocumentRequest documentRequest, final String fileContent) throws MalformedURLException {
+    public String uploadFile(final DocumentRequest documentRequest, final String fileContent) throws MalformedURLException {
 
+        log.info("send request to ESB for save the file and the request id {}", documentRequest.getRequestId());
         FileNetUploadService fileService = SoapUtil.buildFileNetUpload(urlConfig.getUploadFile()).getFileNetUploadPort();
 
         FileNetUploadRsType response = fileService.fileNetUploadOperation(buildFileNetUploadRq(
                 documentRequest, fileContent
         ));
 
-        SoapUtil.responseCheck(response.getHdr());
+        SoapUtil.responseCheck(documentRequest.getRequestId(), response.getHdr());
+        log.info("response returned successfully and the request id {}", documentRequest.getRequestId());
+
+        return response.getBody().getFileNetID();
     }
 
     private FileNetUploadRqType buildFileNetUploadRq(final DocumentRequest documentRequest, final String fileContent) {

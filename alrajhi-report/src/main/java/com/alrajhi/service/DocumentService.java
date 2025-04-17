@@ -1,7 +1,7 @@
-package com.alrjhi.service;
+package com.alrajhi.service;
 
 import com.alrajhi.dto.request.DocumentRequest;
-import com.alrjhi.dto.response.DocumentResponse;
+import com.alrajhi.dto.response.DocumentResponse;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import net.sf.jasperreports.engine.JRException;
 
