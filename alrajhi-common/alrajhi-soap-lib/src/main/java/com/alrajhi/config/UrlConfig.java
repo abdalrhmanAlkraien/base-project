@@ -16,6 +16,5 @@ import org.springframework.context.annotation.Configuration;
 @Setter
 public class UrlConfig {
 
-    //    @Value("${soap.urls.uploadFile}")
     private String uploadFile;
 }

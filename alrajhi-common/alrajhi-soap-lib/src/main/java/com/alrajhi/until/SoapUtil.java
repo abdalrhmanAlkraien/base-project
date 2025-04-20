@@ -4,6 +4,7 @@ import com.alrajhi.client.FileNetUpload;
 import com.alrajhi.client.MsgRsHdrType;
 import com.alrajhi.error.error.BusinessErrorCodes;
 import com.alrajhi.error.exception.BusinessRoleException;
+import com.sun.xml.ws.wsdl.parser.InaccessibleWSDLException;
 import lombok.experimental.UtilityClass;
 import lombok.extern.log4j.Log4j2;
 
@@ -22,13 +23,35 @@ import java.util.UUID;
 public class SoapUtil {
 
     public FileNetUpload buildFileNetUpload(String appendUrl) throws MalformedURLException {
-        // URL of the actual WSDL on your SOAP server
-        URL wsdlUrl = new URL("http://localhost:8080/ws/CommonUtilities/".concat(appendUrl).concat("?wsdl"));
 
-        // QName = namespace URI + service name from your WSDL <service name="...">
-        QName qname = new QName("http://www.xx.com/CommonUtilities", "CommonUtilities");
+        try {
+            Class<?> saajClass = Class.forName("com.sun.xml.messaging.saaj.soap.SAAJMetaFactoryImpl");
+            System.out.println("SAAJ MetaFactory class found: " + saajClass.getName());
+        } catch (ClassNotFoundException e) {
+            System.err.println("SAAJMetaFactoryImpl not found — saaj-impl is missing from runtime classpath!");
+        }
 
-        return new FileNetUpload(wsdlUrl, qname);
+        try {
+            // ✅ Load the WSDL from classpath (e.g. in common-lib/resources/wsdl/CommonUtilities.wsdl)
+            URL wsdlUrl = FileNetUpload.class
+                    .getClassLoader()
+                    .getResource("wsdl/CommonUtilities.wsdl");
+
+            if (wsdlUrl == null) {
+                throw new RuntimeException("WSDL not found in classpath at wsdl/CommonUtilities.wsdl");
+            }
+
+            // ✅ Create service instance manually with QName
+            QName serviceName = new QName("http://www.alrajhiwebservices.com/CommonUtilities", "FileNetUpload");
+
+            return new FileNetUpload(wsdlUrl, serviceName);
+
+        } catch (InaccessibleWSDLException wsdlException) {
+
+            log.error("error while building the wsdl url could not access the resource");
+            log.error(wsdlException);
+            throw new BusinessRoleException(BusinessErrorCodes.ESB_INTERNAL_API);
+        }
     }
 
     public String generateName() {

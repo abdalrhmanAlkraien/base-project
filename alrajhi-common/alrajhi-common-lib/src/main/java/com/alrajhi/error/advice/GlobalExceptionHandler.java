@@ -35,7 +35,7 @@ public class GlobalExceptionHandler {
         log.error(
                 "handle not found request for request: {} , and the error is: {} \n",
                 request.getRequestURI(),
-                ex.getCause().getMessage());
+                ex.getMessage());
 
         return ResponseEntity
                 .status(NOT_FOUND)
@@ -53,7 +53,7 @@ public class GlobalExceptionHandler {
         log.error(
                 "handle Internal Server Error for request: {} , and the error is: {} \n",
                 request.getRequestURI(),
-                ex.getCause().getMessage());
+                ex.getMessage());
 
         return ResponseEntity
                 .status(INTERNAL_SERVER_ERROR)

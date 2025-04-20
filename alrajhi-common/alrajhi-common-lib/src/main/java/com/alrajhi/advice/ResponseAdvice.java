@@ -47,6 +47,8 @@ public class ResponseAdvice implements ResponseBodyAdvice<Object> {
 
             ApiCallError callError = mapper.convertValue(body, ApiCallError.class);
 
+            // Error Wrapper
+
             return ErrorResponseWrapper
                     .builder()
                     .success(false)
@@ -56,8 +58,6 @@ public class ResponseAdvice implements ResponseBodyAdvice<Object> {
                     .errorMessage(!Objects.isNull(callError.details()) ? callError.details() : null)
                     .errorCode(callError.errorCode())
                     .build();
-            // wrong response
-
         } else {
 
             // success Wrapper

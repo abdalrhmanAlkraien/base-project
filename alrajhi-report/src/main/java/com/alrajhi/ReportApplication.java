@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication(
-        scanBasePackages = {"com.alrajhi", "com.alrajhi"})
+        scanBasePackages = {"com.alrajhi", "com.alrajhi.config"})
 @Log4j2
 public class ReportApplication {
 

@@ -31,7 +31,7 @@ import java.net.MalformedURLException;
 @RequestMapping(EndPoints.DOCUMENT)
 @RequiredArgsConstructor
 @Log4j2
-public class ReportController {
+public class DocumentController {
 
     private final DocumentService documentService;
 
@@ -53,7 +53,7 @@ public class ReportController {
                     @Content
             }, description = "Not Found")
     })
-    @PostMapping("/")
+    @PostMapping
     public ResponseEntity<DocumentResponse> generateDocument(
             @RequestBody @Valid DocumentRequest report
     ) throws JRException, JsonProcessingException, MalformedURLException {
