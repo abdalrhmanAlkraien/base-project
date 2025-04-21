@@ -28,6 +28,9 @@ public class DocumentRequest {
     private String cicNum;
 
     @NotNull
+    private String sessionId;
+
+    @NotNull
     private String requestId;
 
     @NotNull

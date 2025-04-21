@@ -17,4 +17,6 @@
 
 soap:
   urls:
+    mainUrl: https://filenetupload-01-https-sit.apps.ocp.nonprod.alrajhi.bank
+    commonUrl: CommonUtilities
     uploadFile: FileNetUpload

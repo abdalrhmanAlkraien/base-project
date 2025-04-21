@@ -37,11 +37,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.alrajhi</groupId>
-			<artifactId>alrajhi-soap-lib</artifactId>
-		</dependency>
-
-		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>runtime </scope>
@@ -114,19 +109,19 @@
 			<artifactId>alrajhi-soap-lib</artifactId>
 		</dependency>
 
-		<!-- API (interface) -->
-		<dependency>
-			<groupId>jakarta.xml.soap</groupId>
-			<artifactId>jakarta.xml.soap-api</artifactId>
-			<version>3.0.1</version>
-		</dependency>
+<!--		&lt;!&ndash; API (interface) &ndash;&gt;-->
+<!--		<dependency>-->
+<!--			<groupId>jakarta.xml.soap</groupId>-->
+<!--			<artifactId>jakarta.xml.soap-api</artifactId>-->
+<!--			<version>3.0.1</version>-->
+<!--		</dependency>-->
 
-		<!-- Implementation (this is the factory) -->
-		<dependency>
-			<groupId>com.sun.xml.messaging.saaj</groupId>
-			<artifactId>saaj-impl</artifactId>
-			<version>3.0.1</version>
-		</dependency>
+<!--		&lt;!&ndash; Implementation (this is the factory) &ndash;&gt;-->
+<!--		<dependency>-->
+<!--			<groupId>com.sun.xml.messaging.saaj</groupId>-->
+<!--			<artifactId>saaj-impl</artifactId>-->
+<!--			<version>3.0.1</version>-->
+<!--		</dependency>-->
 	</dependencies>
 
 </project>

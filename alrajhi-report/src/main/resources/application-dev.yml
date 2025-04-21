@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: ${data.url:jdbc:mysql://127.0.0.1:3306/report-service?autoReconnect=true&useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true}
+    url: ${data.url:jdbc:mysql://127.0.0.1:3306/report-service?autoReconnect=true&useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&&createDatabaseIfNotExist=true}
     username: ${data.username:adminUser}
     password: ${data.password:AdminPassword}
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -19,7 +19,7 @@ spring:
         jdbc:
           size: 100
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
 
 
 logging:

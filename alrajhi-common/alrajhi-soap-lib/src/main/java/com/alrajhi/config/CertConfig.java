@@ -64,7 +64,7 @@ public class CertConfig {
             // Optional (not recommended for prod): disable hostname check
             HttpsURLConnection.setDefaultHostnameVerifier((hostname, session) -> true);
 
-            System.out.println("✅ Custom certificate loaded from resources.");
+            System.out.println("Custom certificate loaded from resources.");
         }
     }
 }

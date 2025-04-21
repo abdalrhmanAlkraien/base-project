@@ -2,6 +2,7 @@ package com.alrajhi.error.advice;
 
 import com.alrajhi.error.error.ApiCallError;
 import com.alrajhi.error.error.ErrorCategories;
+import com.alrajhi.error.exception.BusinessRoleException;
 import com.alrajhi.util.WebUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.log4j.Log4j2;
@@ -50,10 +51,19 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ApiCallError>
     handleInternalServerError(HttpServletRequest request, Exception ex) {
 
-        log.error(
-                "handle Internal Server Error for request: {} , and the error is: {} \n",
-                request.getRequestURI(),
-                ex.getMessage());
+        if(ex instanceof BusinessRoleException e) {
+
+            log.error(
+                    "handle Internal Server Error for request: {} , and the error is: {} \n",
+                    request.getRequestURI(),
+                    e.getErrorCode().getErrorMessage());
+        } else {
+
+            log.error(
+                    "handle Internal Server Error for request: {} , and the error is: {} \n",
+                    request.getRequestURI(),
+                    ex.getMessage());
+        }
 
         return ResponseEntity
                 .status(INTERNAL_SERVER_ERROR)

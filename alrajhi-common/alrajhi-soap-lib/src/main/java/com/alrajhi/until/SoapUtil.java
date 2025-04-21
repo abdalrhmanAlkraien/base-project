@@ -1,6 +1,7 @@
 package com.alrajhi.until;
 
 import com.alrajhi.client.FileNetUpload;
+import com.alrajhi.client.FileNetUploadService;
 import com.alrajhi.client.MsgRsHdrType;
 import com.alrajhi.error.error.BusinessErrorCodes;
 import com.alrajhi.error.exception.BusinessRoleException;
@@ -8,9 +9,7 @@ import com.sun.xml.ws.wsdl.parser.InaccessibleWSDLException;
 import lombok.experimental.UtilityClass;
 import lombok.extern.log4j.Log4j2;
 
-import javax.xml.namespace.QName;
-import java.net.MalformedURLException;
-import java.net.URL;
+import javax.xml.ws.BindingProvider;
 import java.util.UUID;
 
 /**
@@ -22,29 +21,29 @@ import java.util.UUID;
 @Log4j2
 public class SoapUtil {
 
-    public FileNetUpload buildFileNetUpload(String appendUrl) throws MalformedURLException {
+    public FileNetUploadService buildFileNetUpload(
+            final String baseUrl,
+            final String pathUrl,
+            final String directionUrl
+    ) {
 
         try {
-            Class<?> saajClass = Class.forName("com.sun.xml.messaging.saaj.soap.SAAJMetaFactoryImpl");
-            System.out.println("SAAJ MetaFactory class found: " + saajClass.getName());
-        } catch (ClassNotFoundException e) {
-            System.err.println("SAAJMetaFactoryImpl not found — saaj-impl is missing from runtime classpath!");
-        }
 
-        try {
-            // ✅ Load the WSDL from classpath (e.g. in common-lib/resources/wsdl/CommonUtilities.wsdl)
-            URL wsdlUrl = FileNetUpload.class
-                    .getClassLoader()
-                    .getResource("wsdl/CommonUtilities.wsdl");
+            FileNetUploadService fileService = new FileNetUpload().getFileNetUploadPort();
 
-            if (wsdlUrl == null) {
-                throw new RuntimeException("WSDL not found in classpath at wsdl/CommonUtilities.wsdl");
-            }
+            BindingProvider bp = (BindingProvider) fileService;
 
-            // ✅ Create service instance manually with QName
-            QName serviceName = new QName("http://www.alrajhiwebservices.com/CommonUtilities", "FileNetUpload");
+            bp.getRequestContext().put("com.sun.xml.internal.ws.connect.timeout", 10000);
+            bp.getRequestContext().put("com.sun.xml.internal.ws.request.timeout", 20000);
 
-            return new FileNetUpload(wsdlUrl, serviceName);
+            // setup the url
+            bp.getRequestContext().put(
+                    BindingProvider.ENDPOINT_ADDRESS_PROPERTY,
+                    buildUrl(baseUrl, pathUrl, directionUrl)
+            );
+
+
+            return fileService;
 
         } catch (InaccessibleWSDLException wsdlException) {
 
@@ -63,11 +62,21 @@ public class SoapUtil {
 
         if (!msgRsHdrType.getStatus().getStatusCd().equals("I000000")) {
 
-            log.info("the response have error code {} and the request id {}",
+            log.error("the response have error code {} {} and the request id {}",
                     msgRsHdrType.getStatus().getStatusCd(),
+                    msgRsHdrType.getStatus().getStatusDesc(),
                     requestId);
 
             throw new BusinessRoleException(BusinessErrorCodes.ESB_INTERNAL_API);
         }
+    }
+
+    private String buildUrl(final String baseUrl, final String path, final String directionUrl) {
+
+        return new StringBuilder(baseUrl)
+                .append("/")
+                .append(path)
+                .append("/")
+                .append(directionUrl).toString();
     }
 }

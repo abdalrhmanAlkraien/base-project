@@ -16,5 +16,7 @@ import org.springframework.context.annotation.Configuration;
 @Setter
 public class UrlConfig {
 
+    private String mainUrl;
+    private String commonUrl;
     private String uploadFile;
 }

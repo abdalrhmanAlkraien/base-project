@@ -50,6 +50,10 @@ public class JasperDocumentService implements DocumentService {
     private final ObjectMapper mapper;
     private final FileClient fileClient;
 
+    private static final String TABLES = "tables";
+    private static final String ROWS = "rows";
+    private static final String INDEBTEDNESS_LETTER_AR_LOCATION = "reports/IndebtednessLetterAr.jrxml";
+    private static final String INDEBTEDNESS_LETTER_EN_LOCATION = "reports/IndebtednessLetterEn.jrxml";
     /**
      * To generate document
      *
@@ -70,11 +74,11 @@ public class JasperDocumentService implements DocumentService {
                 if (documentRequest.getReportLanguage().equals(Language.AR)) {
                     reportStream = ReportApplication.class
                             .getClassLoader()
-                            .getResourceAsStream("reports/reportAr.jrxml");
+                            .getResourceAsStream(INDEBTEDNESS_LETTER_AR_LOCATION);
                 } else {
                     reportStream = ReportApplication.class
                             .getClassLoader()
-                            .getResourceAsStream("reports/reportEn.jrxml");
+                            .getResourceAsStream(INDEBTEDNESS_LETTER_EN_LOCATION);
                 }
 
                 if (reportStream == null) {
@@ -90,14 +94,15 @@ public class JasperDocumentService implements DocumentService {
 
                 parameters.put("currentDate", new Date());
 
-                if (!documentRequest.getParams().containsKey("tables")) {
+                if (!documentRequest.getParams().containsKey(TABLES)) {
                     throw new BusinessRoleException(BusinessErrorCodes.REPORT_IS_NULL);
                 }
 
+                // get tables from the request body
                 List<List<Map<String, String>>> tables = mapper.convertValue(
-                        ((List<Map<String, Object>>) documentRequest.getParams().get("tables"))
+                        ((List<Map<String, Object>>) documentRequest.getParams().get(TABLES))
                                 .stream()
-                                .map(table -> table.get("rows"))
+                                .map(table -> table.get(ROWS))
                                 .collect(Collectors.toList()),
                         new TypeReference<List<List<Map<String, String>>>>() {
                         }
@@ -114,14 +119,15 @@ public class JasperDocumentService implements DocumentService {
 
                 Collection<Map<String, ?>> table1DataSource = new ArrayList<>();
 
+                // fill the table data by Source name
                 tables.get(0).forEach(table1DataSource::add);
-
 
                 JRDataSource tableDataSource = new JRBeanCollectionDataSource(table1DataSource);
                 parameters.put("tableDataSource", tableDataSource);
 
                 break;
 
+            // if there is any new report, you should add it as a case inside the switch case to custom it.
             default:
                 log.error("Invalid report letter type: {}", documentRequest.getLetterType());
                 throw new BusinessRoleException(BusinessErrorCodes.WRONG_LETTER_TYPE);
@@ -145,6 +151,8 @@ public class JasperDocumentService implements DocumentService {
                         .letterType(documentRequest.getLetterType())
                         .responseType(documentRequest.getResponseType())
                         .requestId(documentRequest.getRequestId())
+                        .sessionId(documentRequest.getSessionId())
+                        .reportLanguage(documentRequest.getReportLanguage())
                         .build());
 
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();

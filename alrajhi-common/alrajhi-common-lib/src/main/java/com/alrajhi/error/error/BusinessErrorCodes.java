@@ -19,6 +19,10 @@ public enum BusinessErrorCodes {
     REPORT_IS_NULL("REP-002", "Report is null"),
     REPORT_NOT_FOUND("REP-003", "Report not found"),
     PARAMS_MISMATCH("REP-004", "Parameters mismatch"),
+
+
+    //WSDL ERROR
+    COMMON_UTILITY_WSDL_NOT_EXIST("WSDL-001", "WSDL not found in classpath at wsdl/CommonUtilities.wsdl"),
     ;
 
     private final String code;

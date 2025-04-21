@@ -9,8 +9,8 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
 import java.net.MalformedURLException;
-import java.time.Instant;
-import java.util.UUID;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * @author: Abd-alrhman Alkraien.
@@ -27,15 +27,15 @@ public class FileClient {
     public String uploadFile(final DocumentRequest documentRequest, final String fileContent) throws MalformedURLException {
 
         log.info("send request to ESB for save the file and the request id {}", documentRequest.getRequestId());
-        FileNetUploadService fileService = SoapUtil.buildFileNetUpload(urlConfig.getUploadFile()).getFileNetUploadPort();
+        FileNetUploadService fileService = SoapUtil.buildFileNetUpload(urlConfig.getMainUrl(), urlConfig.getCommonUrl(), urlConfig.getUploadFile());
 
         FileNetUploadRsType response = fileService.fileNetUploadOperation(buildFileNetUploadRq(
                 documentRequest, fileContent
         ));
 
         SoapUtil.responseCheck(documentRequest.getRequestId(), response.getHdr());
-        log.info("response returned successfully and the request id {}", documentRequest.getRequestId());
 
+        log.info("response returned successfully and the request id {}", documentRequest.getRequestId());
         return response.getBody().getFileNetID();
     }
 
@@ -55,10 +55,17 @@ public class FileClient {
         agt.setCICNum(documentRequest.getCicNum());
         fileRequest.setAgt(agt);
 
+        // Current timestamp
+        LocalDateTime now = LocalDateTime.now();
+
+        // Formatter to match your required format
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
+
+
         MsgType msgType = new MsgType();
         msgType.setRqID(documentRequest.getRequestId());
         msgType.setSvcID(FileClientConstant.SERVICE_ID);
-        msgType.setMsgTimestamp(Instant.now().toString());
+        msgType.setMsgTimestamp(now.format(formatter));
         msgType.setFuncID(FileClientConstant.FUNCTION_ID);
         msgType.setSubSvcID(FileClientConstant.SUB_FUNCTION_ID);
 
@@ -67,7 +74,7 @@ public class FileClient {
         SysType sysType = new SysType();
         sysType.setChID(ChIDType.INPUT_FILE_REQUEST); //
         sysType.setOSID(FileClientConstant.OSID);
-        sysType.setSessionID(UUID.randomUUID().toString());
+        sysType.setSessionID(documentRequest.getSessionId());
         sysType.setSessionLang(documentRequest.getReportLanguage().name());
         fileRequest.setSys(sysType);
         return fileRequest;
@@ -77,7 +84,7 @@ public class FileClient {
 
         FileNetUploadRqBodyType body = new FileNetUploadRqBodyType();
         body.setFileContent(fileContent);
-        body.setServiceType("Document service");
+        body.setServiceType(FileClientConstant.SERVICE_TYPE);
         body.setFileName(SoapUtil.generateName());
         return body;
     }

@@ -42,6 +42,9 @@ public class DocumentEntity extends AbstractEntity {
     @Enumerated(EnumType.STRING)
     private Source source;
 
+    @Column(name = "session_id")
+    private String sessionId;
+
     @Enumerated(EnumType.STRING)
     private LetterType letterType;
 
